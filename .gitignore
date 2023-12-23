@@ -1,0 +1,11 @@
+.pytest_cache/
+.vscode/
+
+monolitic/
+
+__pycache__/
+.env
+
+./monolitic
+
+script.sql

@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #d35a5a;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.logo img {
+    height:100px; 
+    width:auto
+}
+
+.header {
+    display: flex;
+    justify-content: space-around; /* Puedes usar space-between o center según tus necesidades */
+    align-items: center;
+    background-color: #ffffff; /* O el color que desees */
+    padding: 10px; /* Ajusta el relleno según tus necesidades */
+    font-size: 20px;
+}
+
+nav a {
+    
+    font-family: 'Geologica', sans-serif;
+    color: #e79eff;
+    text-decoration: none;
+    padding: 1em;
+    margin: 0 1em;
+}
+
+section {
+    padding: 2em;
+    flex: 1; /* Esto permite que la sección crezca y ocupe el espacio restante */
+}
+
+.product {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    padding: 1em;
+    margin: 1em;
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+    margin-top: auto; /* Empuja el pie de página hacia la parte inferior */
+}

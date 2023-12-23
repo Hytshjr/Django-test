@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@500&family=Roboto+Condensed:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/js/main.js">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda en Línea</title>
+
+</head>
+<body>
+    <header class="header">
+        <div class="header-left">
+            <a href="https://www.apasionanteshop.com/" class="logo">
+                <img src="https://www.apasionanteshop.com/images/confi/logo.png?v=1161864834" alt="Apasionante" > 
+            </a>
+        </div>
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#">Productos</a>
+            <a href="#">Carrito</a>
+            <a href="#">Contacto</a>
+        </nav>
+        <div class="header-right">
+            <span>Username</span>
+        </div>
+    </header>
+
+    <section>        
+        {% block content %}
+        {% endblock content %}
+    </section>
+    <footer>
+        &copy; 2023 Tienda en Línea
+    </footer>
+
+    <script>
+        function addToCart(productId) {
+            // Lógica para agregar productos al carrito
+            alert('Producto añadido al carrito. Implementa esta función según tus necesidades.');
+        }
+    </script>
+</body>
+</html>
