@@ -15,7 +15,24 @@ def generate_random_product():
     stock = round(random.randint(0, 100),1)
     return [name, description, price, stock]
 
-def create_csv(file_path, num_rows):
+def create_path_product(file_path, num_rows):
+    with open(file_path, mode='w', newline='') as file:
+        writer = csv.writer(file)
+        # Escribir el encabezado
+        writer.writerow(['id', 'imagenpath', 'product_id'])
+        i = 1
+
+        directori = 'D://Backend//django//app_monolitic//static//images'
+        file_names = os.listdir(directori)
+        # Escribir filas de datos aleatorios
+        for file in file_names:
+            product = ['/static/images/'+file,i ]
+            product.insert(0, i)
+            i = 1 + i
+            writer.writerow(product)
+
+    
+def create_product(file_path, num_rows):
     with open(file_path, mode='w', newline='') as file:
         writer = csv.writer(file)
         # Escribir el encabezado
@@ -56,11 +73,11 @@ def cut_image(path):
 
 
 if __name__ == "__main__":
-    # file_path = 'productos.csv'
-    # num_rows = 70  # Puedes cambiar esto al número de filas que desees
-    # create_csv(file_path, num_rows)
-    # print(f"Archivo CSV creado en: {file_path}")
+    file_path = 'productos.csv'
+    num_rows = 70  # Puedes cambiar esto al número de filas que desees
+    create_path_product(file_path, num_rows)
+    print(f"Archivo CSV creado en: {file_path}")
     
-    modify_image()
+    # modify_image()
 
     

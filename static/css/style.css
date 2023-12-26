@@ -1,29 +1,56 @@
+header,
+nav,
+div,
+ol,
+ul,
+li,
+section {
+    margin: 0;
+}
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #d35a5a;
+    background-color: #f1f1f1;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    margin-top: 125px;
+}
+
+a {
+    text-decoration: none;
+}
+
+li,
+ol {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px;
+    font-size: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 
 .logo img {
-    height:100px; 
-    width:auto
-}
-
-.header {
-    display: flex;
-    justify-content: space-around; /* Puedes usar space-between o center según tus necesidades */
-    align-items: center;
-    background-color: #ffffff; /* O el color que desees */
-    padding: 10px; /* Ajusta el relleno según tus necesidades */
-    font-size: 20px;
+    height: 100px;
+    width: auto
 }
 
 nav a {
-    
+
     font-family: 'Geologica', sans-serif;
     color: #e79eff;
     text-decoration: none;
@@ -32,16 +59,162 @@ nav a {
 }
 
 section {
-    padding: 2em;
-    flex: 1; /* Esto permite que la sección crezca y ocupe el espacio restante */
+    flex: 1;
+}
+
+div {
+    border: #b3edaf solid 0px;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+/* Cambios en estilos para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .content a {
+        flex: 1 0 48%; /* Esto cambia a 2 columnas en pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 576px) {
+    .content a {
+        flex: 1 0 100%; /* Esto cambia a 1 columna en pantallas aún más pequeñas */
+    }
 }
 
 .product {
-    border: 1px solid #ddd;
-    background-color: #fff;
     padding: 1em;
-    margin: 1em;
-    text-align: center;
+    margin-left: 6em;
+    margin-top: 1.4em;
+    width: 13em;
+    background-color: #ffffff;
+    border: #333 solid 0px;
+}
+
+.image_product {
+    margin: 0px;
+    border-bottom: #494848 0.000000000001em solid;
+
+    max-width: 100%; /* La imagen no será más ancha que su contenedor */
+    overflow: hidden; /* Evita que la imagen se desborde del contenedor */
+
+}
+
+.image_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 240px;
+}
+
+.img_product {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+.text_product {
+    padding: 1em 0em 1em 0em;
+    height: auto;
+}
+
+.brand_product {
+    padding: 0em 0em 0.5em 0em;
+}
+
+.sales_product{
+    font-size: 13px;
+    line-height: 12px;
+    color: #767676;
+    -webkit-letter-spacing: 0;
+    -moz-letter-spacing: 0;
+    -ms-letter-spacing: 0;
+    letter-spacing: 0;
+}
+
+.sales_product{
+    margin-top: 4px;
+    text-transform: none;
+    display: block;
+}
+
+.title_product {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 16px;
+    color: #4A4A4A;
+}
+
+.brand_product {
+    margin-top: 4px;
+    text-transform: none;
+    display: inline-block;
+    font-size: 13px;
+    color: #888;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.brand_product {
+    font-family: inherit;
+    font-size: 13px;
+    line-height: 16px;
+    color: #333;
+    margin-top: 8px;
+}
+
+
+
+/* Color de precio */
+.price_product {
+    color: #717171;
+}
+
+.price_product{
+    color: #767676;
+}
+
+.price_mark{
+    -webkit-text-decoration: line-through;
+    text-decoration: line-through;
+    font-size: 13px;
+}
+/*Precio */
+
+/* Rojo descuento */
+.descount {
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin-right: 0 !important;
+    line-height: 1.14rem !important;
+}
+
+.price_product {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
 }
 
 footer {
@@ -49,5 +222,5 @@ footer {
     color: #fff;
     padding: 1em;
     text-align: center;
-    margin-top: auto; /* Empuja el pie de página hacia la parte inferior */
+    margin-top: auto;
 }
