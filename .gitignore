@@ -8,4 +8,6 @@ __pycache__/
 
 ./monolitic
 
+structure_files.txt
+
 script.sql

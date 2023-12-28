@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+<h2>{{ product.name }}</h2>
+<p>Precio: {{ product.price }}</p>
+{% if product.image_path %}
+    <img src="{{ product.image_path }}" alt="{{ product.name }}">
+{% endif %}
+<!-- Agrega más detalles según sea necesario -->
+{% endblock content %}

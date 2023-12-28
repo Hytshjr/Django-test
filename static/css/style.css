@@ -8,7 +8,6 @@ section {
     margin: 0;
 }
 
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -17,7 +16,8 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    margin-top: 125px;
+    align-items: center;
+    justify-content: center;
 }
 
 a {
@@ -29,42 +29,104 @@ ol {
     list-style-type: none;
     padding-left: 0;
   }
-  
+
+.pre-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px; /* Ajusta el espaciado según tus preferencias */
+    background-color: #ffffff; /* Agrega un color de fondo para visualizar mejor la sección pre-header */
+}
+
+.right-preheader,
+.left-preheader {
+    display: flex;
+    align-items: center;
+}
+
+.right-preheader div {
+    margin-right: 10px; /* Ajusta el margen entre las secciones según tus preferencias */
+}
+
+.right-preheader button {
+    background-color: #111; /* Ajusta el color del botón según tus preferencias */
+    color: #fff; /* Ajusta el color del texto del botón según tus preferencias */
+    padding: 5px 10px; /* Ajusta el espaciado interno del botón según tus preferencias */
+    border: none;
+    cursor: pointer;
+}
+
+.right-preheader button:hover {
+    background-color: #333; /* Ajusta el color del botón al pasar el ratón sobre él */
+}
+
 .header {
-    position: fixed;
-    top: 0;
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: #ffffff;
-    padding: 10px;
-    font-size: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
 
-.logo img {
-    height: 100px;
-    width: auto
+.header-center {
+    flex-grow: 1;  /* Hace que este elemento ocupe el espacio restante */
+}
+
+.header-left,
+.header-right,
+.header-center {
+    display: flex;
+    align-items:center;  /* Centra verticalmente los elementos */
+
+}
+
+.header-left img {
+    height: 50px;  /* Ajusta según sea necesario */
+    width: auto;  /* Ajusta según sea necesario */
+}
+
+.header-link {
+    flex-grow: 1;
+    text-align: center;  /* Agrega esta línea */
 }
 
 nav a {
-
     font-family: 'Geologica', sans-serif;
     color: #e79eff;
     text-decoration: none;
     padding: 1em;
     margin: 0 1em;
+    display: inline-block;  /* Añade esto para que los enlaces se muestren en una línea */
 }
+
+
+
+
+.header-right {
+    /* Estilos para el área de la derecha */
+    margin-right: 1.3em;
+}
+
+/* ------------------------------------------------ */
 
 section {
     flex: 1;
 }
 
-div {
-    border: #b3edaf solid 0px;
+.banner_home {
+    text-align: center; /* Alinea horizontalmente el contenido dentro del contenedor */
+    display: flex; /* Utiliza un contenedor de tipo flex para controlar la alineación vertical */
+    align-items: center; /* Alinea verticalmente el contenido en el centro */
 }
+
+.banner_home img {
+    max-width: 100%; /* Asegura que la imagen no sea más ancha que el contenedor */
+    height: auto; /* Mantiene la proporción original de la imagen */
+}
+
 
 .content {
     display: flex;
@@ -73,31 +135,41 @@ div {
 
 
 
-/* Cambios en estilos para pantallas más pequeñas */
-@media (max-width: 768px) {
-    .content a {
-        flex: 1 0 48%; /* Esto cambia a 2 columnas en pantallas más pequeñas */
+.main-container {
+    display: flex;
+    flex-direction: row; /* Cambiado a fila para que las secciones estén una al lado de la otra */
+    width: 1263px;
+
+}
+
+.left-section {
+    flex: 1;
+    background-color: #ffffff;
+    margin-top: 12px;
+    max-width: 25%; /* Puedes ajustar este valor según tu preferencia */
+
+
+}
+
+/* Media query para pantallas pequeñas */
+@media screen and (max-width: 1280px) {
+    .main-container {
+        width: 100%; /* En pantallas más pequeñas, ocupa todo el ancho */
     }
 }
 
-@media (max-width: 576px) {
-    .content a {
-        flex: 1 0 100%; /* Esto cambia a 1 columna en pantallas aún más pequeñas */
-    }
-}
 
 .product {
     padding: 1em;
-    margin-left: 6em;
-    margin-top: 1.4em;
-    width: 13em;
+    width: 12.1em;
+    margin-left: 11px;
+    margin-top: 12px;
     background-color: #ffffff;
     border: #333 solid 0px;
 }
 
 .image_product {
     margin: 0px;
-    border-bottom: #494848 0.000000000001em solid;
 
     max-width: 100%; /* La imagen no será más ancha que su contenedor */
     overflow: hidden; /* Evita que la imagen se desborde del contenedor */
@@ -114,8 +186,8 @@ div {
 .img_product {
     max-width: 100%;
     max-height: 100%;
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;
 }
 
 .text_product {
@@ -169,15 +241,14 @@ div {
     margin-top: 8px;
 }
 
-
-
 /* Color de precio */
-.price_product {
-    color: #717171;
-}
 
 .price_product{
     color: #767676;
+}
+
+.price_number {
+    font-size: 19px;
 }
 
 .price_mark{
@@ -189,13 +260,14 @@ div {
 
 /* Rojo descuento */
 .descount {
-    padding: 1px 6px;
+    padding: 0px 6px;
+    font-size: 11px;
     border-radius: 3px;
-    margin-right: 0 !important;
-    line-height: 1.14rem !important;
+    margin-left: 5px !important;
+    line-height: 1.2rem !important;
 }
 
-.price_product {
+.price_number {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -224,3 +296,4 @@ footer {
     text-align: center;
     margin-top: auto;
 }
+

@@ -1,37 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrolling Header</title>
     <style>
         body {
-            background-color: lightblue;
-            }
-        
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
 
+        .pre-header {
+            background-color: #f0f0f0;
+            padding: 10px;
+        }
 
-        .container {
-            display: flex; /* Usa flexbox para alinear horizontalmente */
-            }
+        .pre-header a {
+            margin-right: 10px;
+        }
 
-            .box {
-                width: 100px;
-                height: 100px;
-                background-color: #ddd;
-                margin: 10px;
-                display: flex;
-                justify-content: center; /* Centra el contenido horizontalmente */
-                align-items: center; /* Centra el contenido verticalmente */
-            }
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            display: none; /* Oculta el header por defecto */
+        }
+
+        .header a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .header-right {
+            float: right;
+        }
+
+        .content {
+            height: 800px; /* Ajusta la altura según sea necesario */
+            padding-top: 50px; /* Ajusta según la altura del header */
+        }
     </style>
- 
- <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 </head>
 <body>
-    <div class="container">
-        <div class="box">Div 1</div>
-        <div class="box">Div 2</div>
-        <div class="box">Div 3</div>
+    <div class="pre-header">
+        <!-- Contenido de la pre-header -->
     </div>
+
+    <header class="header" id="main-header">
+        <!-- Contenido del header -->
+    </header>
+
+    <div class="content">
+        <!-- Contenido principal de la página -->
+    </div>
+
+    <script>
+        var header = document.getElementById("main-header");
+        var sticky = header.offsetTop;
+
+        function stickyHeader() {
+            if (window.pageYOffset > sticky) {
+                header.style.display = "block";
+            } else {
+                header.style.display = "none";
+            }
+        }
+
+        window.onscroll = function() {
+            stickyHeader();
+        };
+    </script>
 </body>
 </html>
