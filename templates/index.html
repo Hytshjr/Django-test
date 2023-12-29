@@ -61,15 +61,17 @@
             </div>
             <nav class="header-center">
                 <div class="header-link">
-                    <a href="{% url 'home' %}">Inicio</a>
-                    <a href="{% url 'products' %}">Productos</a>
-                    <a href="">Carrito</a>
-                    <a href="#">Contacto</a>
+                    <a href="{% url 'product_categories' 'ninos' %}">niño</a>
+                    <a href="{% url 'product_categories' 'adultos' %}">adultos</a>
+                    <a href="{% url 'product_categories' 'colegio' %}">colegio</a>
+                    <a href="{% url 'product_categories' 'trabajo' %}">trabajo</a>
                 </div>
                 
             </nav>
             <div class="header-right">
+                <a href="{% url 'products' %}">
                 <span>Username</span>
+                </a>
             </div>
         </header>
         {% block content %}

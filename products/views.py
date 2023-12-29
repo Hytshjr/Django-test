@@ -4,7 +4,7 @@ from .models import Product, ProductImage
 
 def products(request):
     link_img = Product.objects.prefetch_related('productimage_set')
-    products_with_images = link_img.values('id','name', 'price', 'productimage__image_path')
+    products_with_images = link_img.values('id','name', 'price', 'categories', 'productimage__image_path')
 
     # Pasa la lista a la plantilla
     context = {'products': products_with_images}
@@ -19,3 +19,14 @@ def product_detail(request, product_id):
     context = {'product': product}
 
     return render(request, 'product_detail.html', context)
+
+
+def product_categories(request, product_categories):
+    link_img = Product.objects.prefetch_related('productimage_set').filter(categories=product_categories+'\r')
+    products_with_images = link_img.values('id','name', 'price', 'categories', 'productimage__image_path')
+
+
+    # Pasa la lista a la plantilla
+    context = {'products': products_with_images}
+    
+    return render(request, 'products.html', context)

@@ -1,71 +1,16 @@
-id,name,description,price,stock
-1,data,Head PM parent include go write.,27.29,63
-2,fear,Establish surface whether choice manage catch everything.,25.88,44
-3,stay,Matter interesting two their cost magazine in may.,10.87,8
-4,choose,Old several market situation see test.,37.24,32
-5,oil,Ask tax administration speech sing realize.,39.17,96
-6,loss,Fund go economic international beat adult effect.,36.56,37
-7,evening,Of life newspaper hit save.,26.0,91
-8,teach,White drop character media.,48.36,53
-9,war,Hold effect operation hair treat special name.,47.57,74
-10,tell,Brother event she necessary character.,14.18,47
-11,nor,Fact charge student ability study hundred.,21.93,88
-12,yet,Story may book.,42.62,29
-13,ok,After out factor huge smile fill tell.,34.98,57
-14,west,Plan country instead she gun.,11.1,45
-15,Congress,One strong speech condition play first buy foot.,37.69,40
-16,attention,Sport center action popular hard.,40.43,14
-17,on,Can event side yeah allow.,27.32,86
-18,president,Economy government send not mother here relationship.,24.09,62
-19,left,Line sell six choose available.,12.54,38
-20,pretty,Risk feeling color case loss.,36.09,23
-21,then,Around question you thought eat notice.,11.73,7
-22,detail,College seek no energy all find consumer stay.,19.97,61
-23,this,Fight sea name front apply little.,35.19,64
-24,send,Rather I vote center view inside fall fall.,15.07,76
-25,away,Report real expect bar decision quickly yet.,49.19,56
-26,down,Have information tend away push.,18.87,97
-27,TV,Alone consumer consider lose pull fund respond.,35.06,91
-28,subject,Whatever forward detail forget better.,33.58,96
-29,spend,Structure rise idea affect let mind kid can.,16.23,82
-30,small,Offer summer relationship air later quality view.,40.64,27
-31,mission,Range none toward people sister final.,40.38,49
-32,mean,Service difference serious decide executive thought thank next.,30.68,71
-33,born,Born would new animal customer.,12.28,32
-34,weight,Behind movie some from.,17.74,41
-35,discussion,Left start also follow wide wonder high character.,29.08,18
-36,attack,Mention service partner ready sign.,48.02,29
-37,music,Say push thing his.,48.44,90
-38,culture,Myself cost suffer sit.,41.85,99
-39,on,Main authority dream.,27.32,64
-40,security,Camera us tonight movie stay listen all.,14.51,80
-41,executive,Scene involve city national young you.,27.31,95
-42,almost,Room plant another significant much meeting Mr.,14.68,86
-43,partner,Exist along daughter firm run movement and listen.,30.59,19
-44,degree,Through on range compare specific great.,20.45,95
-45,executive,Cover option machine room figure article.,33.6,60
-46,popular,Wonder generation strong quickly these pull.,19.24,36
-47,agent,Shoulder compare rather first reach pattern investment thousand.,47.95,41
-48,budget,Let figure attention whole section.,28.7,34
-49,body,Chance build will economy be work research.,36.45,69
-50,more,Environment personal board list after must.,22.29,49
-51,whom,Tough operation cup choice.,22.77,48
-52,leg,Enough learn task game push issue.,39.68,14
-53,plan,To star school require join.,44.53,34
-54,member,Special themselves others court vote Republican serious produce.,30.0,1
-55,scientist,Certainly dark total.,19.45,92
-56,key,Tv final brother reflect with sign address full.,38.44,1
-57,mission,There food our newspaper spend top you.,18.76,94
-58,woman,Summer edge expert professional music bag car.,42.32,55
-59,rather,Everybody they town.,25.37,29
-60,chair,Mouth she everyone sure may people reveal.,31.4,55
-61,them,Fight forward mention floor.,16.25,55
-62,item,Region amount investment back.,45.03,73
-63,think,People conference others.,43.78,83
-64,pick,Some until approach goal true.,20.96,14
-65,produce,Information him great hit ago ball affect.,12.77,94
-66,model,Population cell usually group nation community gas.,10.79,52
-67,probably,Dinner early kid operation student decision.,41.92,55
-68,eight,Step both notice foreign chair.,44.59,40
-69,letter,Social degree feel ok happy act.,22.8,37
-70,area,Then yeah government.,27.92,19
+id,imagenpath,product_id
+1,/static/images/1.jpg,1
+2,/static/images/10.jpg,2
+3,/static/images/11.jpg,3
+4,/static/images/12.jpg,4
+5,/static/images/13.jpg,5
+6,/static/images/14.jpg,6
+7,/static/images/2.jpg,7
+8,/static/images/3.jpg,8
+9,/static/images/4.jpg,9
+10,/static/images/5.jpg,10
+11,/static/images/6.jpg,11
+12,/static/images/7.jpg,12
+13,/static/images/8.jpg,13
+14,/static/images/9.jpg,14
+15,/static/images/logo.png,15
