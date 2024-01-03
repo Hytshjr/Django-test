@@ -11,7 +11,7 @@
         <div class="content">
             {% for product in products %}
             <div  class="product">
-                <a href="{% url 'product_detail' product.id %}" > 
+                <a href="{% url 'product_detail' product.name_detail %}" > 
                     <div class="image_product">
                         <section class="image_content" >
                             {% if product.productimage__image_path %}
@@ -29,7 +29,7 @@
                                 <b class="title_product">{{ product.name }}</b>
                             </span>
                             <span>
-                                <b class="sales_product">Categoria: {{ product.categories }}</b>
+                                <b class="sales_product">Product sales</b>
                             </span>
                     </div>
                     <div class="price_product">

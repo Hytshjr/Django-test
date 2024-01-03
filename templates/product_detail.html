@@ -2,10 +2,107 @@
 {% load static %}
 
 {% block content %}
-<h2>{{ product.name }}</h2>
-<p>Precio: {{ product.price }}</p>
-{% if product.image_path %}
-    <img src="{{ product.image_path }}" alt="{{ product.name }}">
-{% endif %}
-<!-- Agrega más detalles según sea necesario -->
+
+<style>
+    .main-container-detail {
+        background-color: #fff;
+        display: flex;
+        width: 1263px;
+    }
+
+
+    .image_content-detail {
+        height: 460px;
+        width:370px;
+        padding: 10px;
+
+    }
+
+    .img_product_detail {
+        max-width: 100%;
+        max-height: 100%;
+        width: 100%;
+        height: 100%;
+    }
+
+    .image_product-detail {
+        display: flex;
+    }
+
+
+
+    .product-detail {
+        width: 12.1em;
+    }
+
+
+
+    .left_product-detail {
+        flex: 1; 
+    }
+
+
+
+</style>
+
+{% for product in products %}
+<div class="main-container-detail">
+    <div class="left_product-detail">
+        <section class="image_content-detail" >
+            {% if product.productimage__image_path %}
+                <img class="img_product_detail" src="{{ product.productimage__image_path }}" alt="{{ product.name }}">
+            {% else %}
+            <p>No hay imagen disponible</p>
+            {% endif %}
+        </section>
+    </div>    
+
+
+    <div class="right-section-detail">
+        <div  class="product-detail">
+            <a href="{% url 'product_detail' product.name_detail %}" > 
+                
+                <div class="text_product">
+                        <div>
+                            <b class="brand_product">{{ product.productimage__image_path}}</b>
+                        </div>
+                        <span>
+                            <b class="title_product">{{ product.name }}</b>
+                        </span>
+                        <span>
+                            <b class="sales_product">{{ product.description }}</b>
+                        </span>
+                </div>
+                <div class="price_product">
+                    <div >
+                        <ol >
+                            <li  >
+                                <div class="price_number">
+                                    <span class="price_now">S/ {{ product.price }}
+                                    </span>
+                                    <div class="price_number">
+                                        <span class="descount" style="background-color:#EB0029;color:#ffffff" >-24%
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="price_product">
+                                    <span class="price_mark">S/ {{ product.id }}
+                                    </span>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                    <div>
+                        <span>
+                            Despacho a Domicilio
+                        </span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>   
+</div>
+{% endfor %}
 {% endblock content %}

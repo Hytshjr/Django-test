@@ -134,13 +134,12 @@ section {
 }
 
 
-
 .main-container {
     display: flex;
     flex-direction: row; /* Cambiado a fila para que las secciones estén una al lado de la otra */
     width: 1263px;
-
 }
+
 
 .left-section {
     flex: 1;

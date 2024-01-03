@@ -92,17 +92,16 @@ def cut_image(path):
 
 
 
-
-
-
-
 def generate_random_product():
     name = fake.word()
+    name_detail = fake.sentence(ext_word_list=['ninos', 'adultos', 'colegio', 'trabajo'])
+    name_detail = name_detail.replace(' ', '-')  # Reemplazar espacios con -
+    name_detail = name_detail.rstrip('.')  # Eliminar el punto al final 
     description = fake.sentence()
     price = round(random.uniform(10, 50),2)
     stock = round(random.randint(0, 100),1)
     categories = fake.word(ext_word_list=['ninos', 'adultos', 'colegio', 'trabajo'])
-    return [name, description, price, stock, categories]
+    return [name, name_detail, description, price, stock, categories]
 
         
 
@@ -111,7 +110,7 @@ def create_product(file_path, num_rows):
     with open(file_path, mode='w', newline='') as file:
         writer = csv.writer(file)
         # Escribir el encabezado
-        writer.writerow(['id', 'name', 'description', 'price', 'stock', 'categories'])
+        writer.writerow(['id', 'name', 'name_detail', 'description', 'price', 'stock', 'categories'])
         i = 1
         # Escribir filas de datos aleatorios
         for _ in range(num_rows):
@@ -126,9 +125,9 @@ def create_product(file_path, num_rows):
 if __name__ == "__main__":
     file_path = 'productos.csv'
     num_rows = 120  # Puedes cambiar esto al número de filas que desees
-    # create_product(file_path, num_rows)
+    create_product(file_path, num_rows)
     
-    create_path_product(file_path, num_rows)
+    # create_path_product(file_path, num_rows)
 
     print(f"Archivo CSV creado en: {file_path}")
 

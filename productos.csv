@@ -1,16 +1,121 @@
-id,imagenpath,product_id
-1,/static/images/1.jpg,1
-2,/static/images/10.jpg,2
-3,/static/images/11.jpg,3
-4,/static/images/12.jpg,4
-5,/static/images/13.jpg,5
-6,/static/images/14.jpg,6
-7,/static/images/2.jpg,7
-8,/static/images/3.jpg,8
-9,/static/images/4.jpg,9
-10,/static/images/5.jpg,10
-11,/static/images/6.jpg,11
-12,/static/images/7.jpg,12
-13,/static/images/8.jpg,13
-14,/static/images/9.jpg,14
-15,/static/images/logo.png,15
+id,name,name_detail,description,price,stock,categories
+1,program,Colegio-trabajo-ninos-adultos,Pressure blue sometimes data.,30.59,16,colegio
+2,blood,Colegio-ninos-colegio,Political development eye professional industry.,23.85,58,trabajo
+3,it,Trabajo-colegio-adultos-adultos-colegio-colegio-colegio,Challenge great where just before.,43.43,61,ninos
+4,woman,Trabajo-trabajo-colegio-adultos-colegio-trabajo,Current figure girl them bill manager half.,12.9,31,colegio
+5,toward,Adultos-trabajo-colegio-colegio-adultos,Indicate war role outside.,36.27,71,ninos
+6,myself,Ninos-adultos-ninos-ninos-colegio,Decide change we fish bad result beyond.,27.37,49,colegio
+7,outside,Ninos-colegio-trabajo-trabajo-ninos-colegio-adultos,Light single choice rule remember.,41.11,99,colegio
+8,citizen,Trabajo-adultos-ninos-adultos-colegio-adultos-adultos,Network threat participant old loss structure.,26.79,43,ninos
+9,staff,Colegio-ninos-ninos-colegio-adultos-adultos,Yeah air food court raise hear.,19.34,63,trabajo
+10,he,Adultos-ninos-trabajo-adultos-trabajo-ninos-trabajo,Might catch your local leg common myself full.,18.99,81,colegio
+11,total,Ninos-adultos-ninos-trabajo-adultos-ninos,Produce lay simple enter war west available.,17.63,49,trabajo
+12,meet,Ninos-trabajo-adultos-adultos-trabajo-ninos,Security pick gas control moment hold.,10.93,84,adultos
+13,smile,Colegio-adultos-colegio,Everyone yard easy miss.,14.44,40e,colegio
+14,mention,Ninos-colegio-adultos-adultos-adultos,Follow say half.,45.64,42,trabajo
+15,life,Colegio-adultos-adultos-adultos-adultos-adultos-adultos,Decade spring from perhaps idea history.,26.44,100,colegio
+16,summer,Colegio-colegio-trabajo-colegio-ninos-colegio,Day pass machine stuff agree.,10.21,21,trabajo
+17,within,Adultos-colegio-trabajo-adultos-ninos-colegio,Much summer first consumer poor.,42.01,75,adultos
+18,source,Adultos-colegio-ninos-colegio,Card share former.,46.78,60,trabajo
+19,offer,Trabajo-colegio-ninos-ninos-ninos-trabajo,Yourself evening pattern former.,12.98,26,trabajo
+20,college,Ninos-colegio-adultos-colegio-colegio-colegio-trabajo,Source image who nor.,43.15,55,ninos
+21,around,Trabajo-trabajo-adultos-adultos-adultos-adultos-trabajo,Decision body point entire activity sea.,30.12,89,ninos
+22,hair,Colegio-adultos-trabajo-ninos,Free outside type.,15.26,11,colegio
+23,put,Ninos-colegio-trabajo-adultos,Central movement always begin case actually last take.,34.62,39,ninos
+24,put,Colegio-trabajo-ninos-ninos-trabajo-trabajo-ninos-trabajo,Safe wait top less tell lawyer.,21.8,56,trabajo
+25,process,Ninos-adultos-ninos-colegio-ninos-colegio-adultos,Music cell seek.,42.93,4,ninos
+26,system,Colegio-adultos-ninos-colegio-ninos,Consumer house benefit later here food Congress ever.,24.11,4,colegio
+27,carry,Ninos-colegio-colegio,Success you magazine pressure movement.,26.99,75,trabajo
+28,smile,Adultos-colegio-colegio-colegio-colegio,Here girl clear ask attention realize month.,49.36,71,adultos
+29,cell,Ninos-colegio-colegio-trabajo-trabajo,Perhaps central next control.,27.52,59,adultos
+30,that,Trabajo-colegio-ninos-ninos,Guess Republican son skill often that.,29.66,37,trabajo
+31,music,Trabajo-adultos-ninos-ninos-trabajo-adultos-adultos,Network federal future recent.,20.74,4,colegio
+32,film,Ninos-adultos-colegio,Capital point quite college bank like.,28.79,63,colegio
+33,physical,Trabajo-adultos-colegio-adultos,Business question single news.,25.93,31,ninos
+34,its,Ninos-adultos-adultos-trabajo,Hospital program news rate boy school.,12.41,75,adultos
+35,sister,Adultos-colegio-ninos-colegio,Couple present about democratic money cold.,45.85,21,adultos
+36,rest,Colegio-adultos-colegio-trabajo,Officer people everything common dog thing child.,28.33,43,trabajo
+37,begin,Adultos-colegio-colegio,Data high consider campaign vote.,26.01,22,ninos
+38,senior,Colegio-trabajo-ninos-adultos-adultos-ninos,Middle student tend agree.,31.73,10,trabajo
+39,wind,Adultos-ninos-trabajo-adultos-colegio,Water direction need agency.,17.09,10,adultos
+40,nor,Ninos-adultos-adultos-colegio-colegio,His professor open open research return offer.,41.66,20,colegio
+41,trial,Ninos-colegio-adultos-colegio-adultos-adultos-ninos,Million artist interview read.,10.12,82,adultos
+42,think,Trabajo-trabajo-adultos-colegio-colegio,Heart behavior what I.,25.61,28,adultos
+43,cold,Colegio-colegio-trabajo-ninos-ninos-adultos,Later here hundred behind put want.,33.76,93,ninos
+44,tell,Ninos-trabajo-colegio-trabajo-colegio-adultos-adultos,Technology it it country event give strong vote.,11.54,37,ninos
+45,offer,Adultos-ninos-trabajo-trabajo-trabajo-adultos,Image control heavy year responsibility high.,44.98,17,adultos
+46,early,Ninos-colegio-colegio-adultos-adultos,Anyone however many simple time.,23.2,85,trabajo
+47,blood,Colegio-trabajo-adultos-ninos-colegio-trabajo-trabajo,Others large institution far.,28.1,29,adultos
+48,box,Trabajo-trabajo-adultos-ninos-ninos-trabajo-colegio,Focus six visit arrive.,33.48,79,colegio
+49,thank,Trabajo-adultos-adultos-trabajo,Employee describe street trouble country prove operation.,16.78,1,trabajo
+50,ago,Trabajo-trabajo-ninos-colegio-ninos-colegio,No national include note have fact truth.,45.16,31,trabajo
+51,not,Trabajo-trabajo-colegio-adultos,Before season staff end.,34.06,23,trabajo
+52,dark,Trabajo-ninos-trabajo-ninos-colegio,Ready baby deal spend reality.,33.01,23,ninos
+53,no,Colegio-trabajo-trabajo-ninos-trabajo,Face history nothing everyone article claim whom.,14.03,73,trabajo
+54,respond,Ninos-colegio-adultos-trabajo-ninos-colegio-colegio,Behind themselves avoid let prove per.,40.03,68,ninos
+55,effect,Colegio-colegio-ninos-ninos,Shoulder general sit special head six building.,31.32,57,adultos
+56,age,Colegio-ninos-trabajo-adultos-trabajo-trabajo,Control far day.,45.49,16,colegio
+57,force,Adultos-adultos-trabajo-trabajo-colegio-trabajo-trabajo,Huge have all yourself individual.,45.17,28,colegio
+58,practice,Ninos-trabajo-trabajo-adultos-ninos-adultos,Lead garden whole wait improve walk wide experience.,41.12,28,trabajo
+59,property,Adultos-colegio-trabajo-adultos-ninos-colegio,Kind affect treatment far south of.,48.35,100,adultos
+60,so,Ninos-ninos-colegio,Understand rest whose similar.,43.35,56,ninos
+61,authority,Colegio-trabajo-ninos-trabajo,Sport likely risk possible industry a process.,41.52,53,trabajo
+62,size,Trabajo-ninos-colegio-colegio-colegio-colegio,Instead north debate with pressure.,29.23,28,colegio
+63,mention,Adultos-adultos-ninos-trabajo-trabajo,Between five television important they kid moment science.,13.51,56,trabajo
+64,PM,Adultos-colegio-colegio-trabajo-adultos-trabajo,Too exactly near energy above.,23.38,54,trabajo
+65,treatment,Adultos-adultos-adultos-adultos-ninos-colegio-colegio,Grow social special about.,43.01,19,trabajo
+66,wife,Colegio-adultos-colegio-colegio,Major blue never religious manage.,37.0,98,colegio
+67,group,Colegio-colegio-ninos-ninos,Model hard rock field.,41.5,66,trabajo
+68,reduce,Adultos-colegio-adultos-trabajo-trabajo,Dream light support street.,46.88,26,trabajo
+69,music,Colegio-trabajo-trabajo-ninos-colegio,Let true increase by address know perhaps.,39.48,42,ninos
+70,successful,Ninos-adultos-trabajo-adultos-ninos-trabajo,Read imagine billion local.,19.21,41,colegio
+71,finally,Ninos-trabajo-ninos,Your protect glass partner work fly.,39.18,85,adultos
+72,lose,Trabajo-adultos-colegio-adultos-ninos-trabajo,Stock bank explain.,40.48,42,colegio
+73,notice,Trabajo-colegio-colegio,You human every include.,37.65,99,adultos
+74,themselves,Trabajo-colegio-adultos-ninos-colegio-colegio,Rule PM option wonder.,48.8,16,adultos
+75,certain,Trabajo-ninos-ninos-colegio-adultos-trabajo-ninos-colegio,Stay option picture scene.,39.35,3,colegio
+76,game,Colegio-adultos-adultos,Sport current fast.,16.95,76,trabajo
+77,particular,Adultos-adultos-colegio-trabajo-adultos-colegio,Call technology stay computer reveal.,40.25,4,trabajo
+78,wonder,Colegio-adultos-adultos-colegio,Southern hotel black simply almost take increase.,31.78,78,trabajo
+79,wide,Adultos-ninos-adultos-ninos-ninos-colegio-adultos,Ok quality night fight.,44.61,13,adultos
+80,out,Trabajo-trabajo-colegio-trabajo-colegio-trabajo,Available everybody environmental movie base author natural church.,45.64,76,adultos
+81,bill,Adultos-colegio-ninos-adultos,Sort out fact simple decide effect war.,48.62,32,adultos
+82,tonight,Trabajo-trabajo-trabajo-trabajo-trabajo,Try loss check heavy nation popular into.,13.56,100,adultos
+83,owner,Adultos-trabajo-trabajo-trabajo,Compare difficult do nature across.,38.33,91,adultos
+84,stop,Adultos-trabajo-trabajo-ninos-colegio-colegio-colegio-ninos,It control oil child.,20.71,22,ninos
+85,social,Ninos-colegio-ninos-ninos-ninos-trabajo-ninos,Inside yeah deep author those final door.,28.83,26,adultos
+86,religious,Trabajo-ninos-colegio-ninos-trabajo-adultos,Prepare case my yourself possible way city go.,30.99,56,trabajo
+87,others,Ninos-ninos-trabajo-ninos,Head general for.,36.07,76,trabajo
+88,day,Colegio-ninos-trabajo-trabajo,Maintain our gas not only.,44.35,98,ninos
+89,participant,Colegio-ninos-adultos,Start walk artist success expect.,49.37,86,ninos
+90,control,Colegio-colegio-adultos-colegio-ninos-ninos,Capital much although into.,45.94,12,ninos
+91,never,Trabajo-adultos-colegio-adultos-adultos-colegio,Firm past table pretty manage.,41.15,4,ninos
+92,result,Ninos-trabajo-colegio-trabajo-adultos,Ask heart that according international forward.,37.82,89,trabajo
+93,religious,Adultos-trabajo-trabajo-colegio-adultos,You job dream decide particular employee.,44.43,39,colegio
+94,course,Adultos-trabajo-ninos-ninos-adultos-adultos,Human service mean draw another marriage.,33.03,64,ninos
+95,fine,Ninos-colegio-ninos-trabajo-adultos-trabajo,So adult turn allow under always.,35.02,29,adultos
+96,bad,Adultos-ninos-ninos-adultos-ninos-ninos,Might exist she under loss technology.,15.38,69,adultos
+97,popular,Ninos-ninos-trabajo,Series own blood either.,20.58,46,adultos
+98,so,Colegio-colegio-trabajo-colegio-trabajo-ninos-ninos-adultos,Determine report physical force.,27.42,71,ninos
+99,friend,Ninos-ninos-ninos-adultos-adultos-ninos-adultos-adultos,That their indicate grow expect meet computer.,30.35,76,trabajo
+100,majority,Adultos-adultos-ninos,Should capital commercial.,34.4,78,colegio
+101,realize,Trabajo-ninos-ninos-ninos-colegio-adultos,Keep now memory country town nor.,22.83,79,trabajo
+102,edge,Trabajo-trabajo-adultos-adultos-ninos,Buy room nearly food.,14.0,86,colegio
+103,when,Adultos-colegio-trabajo-colegio-ninos-adultos-ninos,Toward two bed woman thus herself fund.,36.16,70,ninos
+104,career,Adultos-adultos-trabajo-colegio-ninos-colegio-adultos,Detail impact cover energy majority.,41.83,34,adultos
+105,particularly,Colegio-trabajo-adultos-colegio-adultos-colegio-trabajo-ninos,Raise paper executive.,45.48,44,colegio
+106,north,Colegio-ninos-adultos-trabajo-ninos-colegio,Admit four these safe look explain give.,31.36,15,colegio
+107,determine,Colegio-colegio-ninos-colegio-colegio-colegio-trabajo,Brother son admit recently business budget enough.,31.45,9,trabajo
+108,business,Colegio-colegio-trabajo-trabajo-ninos-trabajo,Heavy write painting.,30.31,41,ninos
+109,our,Colegio-adultos-colegio-adultos-colegio-ninos-colegio,Article their case store condition economic.,25.69,64,ninos
+110,day,Ninos-adultos-ninos-colegio-trabajo-adultos,Ask care seem star reach common try.,34.75,52,ninos
+111,up,Trabajo-colegio-colegio,How night state difference suffer.,34.57,37,colegio
+112,southern,Colegio-adultos-adultos-adultos-ninos-trabajo-colegio,Participant side family stage.,43.87,50,ninos
+113,deal,Ninos-colegio-ninos-colegio-adultos-colegio-trabajo,Huge participant continue Congress production hear stop.,35.89,86,adultos
+114,foreign,Trabajo-adultos-trabajo-ninos-trabajo,Major party oil help truth trade.,29.69,50,trabajo
+115,yet,Trabajo-colegio-ninos-colegio-ninos-ninos-adultos,Cause hand animal long.,27.49,37,adultos
+116,opportunity,Adultos-ninos-trabajo-ninos,Audience cup so music recent.,25.36,39,adultos
+117,sound,Ninos-ninos-trabajo,Forward seem sure teach partner benefit.,21.44,1,colegio
+118,wonder,Trabajo-colegio-adultos-colegio-ninos-adultos,Business war between.,22.51,5,adultos
+119,avoid,Adultos-colegio-adultos-trabajo-ninos,Place pick occur pretty.,46.17,4,trabajo
+120,according,Trabajo-ninos-ninos-trabajo-adultos,Establish miss game score cultural bar.,49.57,7,trabajo
