@@ -10,12 +10,33 @@
         width: 1263px;
     }
 
+    .text_product-detail,
+    .price_product-detail {
+        display: flex;
+    }
 
-    .image_content-detail {
+    .price_product-detail-right,
+    .price_product-detail-left,
+    .text_product-detail-left,
+    .right-section-detail {
+        flex: 1;
+    }
+
+    .left-section-detail,
+    .right-section-detail {
+        padding: 37px 0px 37px 0px;
+    }
+
+    .right-section-detail {
+        padding-right: 37px;
+        padding-left: 19.5px;
+    }
+
+    .left-section-detail {
         height: 460px;
         width:370px;
-        padding: 10px;
-
+        padding-right: 19.5px;
+        padding-left: 37px;
     }
 
     .img_product_detail {
@@ -24,22 +45,121 @@
         width: 100%;
         height: 100%;
     }
+    .brand_product-detail  {
+        text-transform: none;
+        display: block;
+        font-weight: 600;
+        font-size: 23px;
+        color: #888;
+    }
 
-    .image_product-detail {
+    .title_product-detail  {
+        text-transform: none;
+        display: block;
+        font-weight: 700;
+        font-size: 33px;
+        color: #4A4A4A;
+    }
+
+    .descrp_product-detail {
+        text-transform: none;
+        display: block;
+        font-weight: 200;
+        font-size: 18px;
+        color: #767676;
+    }
+
+    .code_product-detail {
+        text-transform: none;
+        display: block;
+        font-weight: 100;
+        font-size: 12px;
+        color: #767676;
+    }
+
+    .price_product-detail{
+        margin-top: 17.5px;
+    }   
+
+    .price_product-detail-left,
+    .price_product-detail-right {
+        border: #00eb33 1px solid;
+        color: #575555;
+
+    }
+
+    .price_descount-product-detail {
         display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 4px;
     }
 
-
-
-    .product-detail {
-        width: 12.1em;
+    .now_price-product-detail {
+        font-size: 28px;
     }
 
-
-
-    .left_product-detail {
-        flex: 1; 
+    .descount-detail {
+        padding: 0px 6px;
+        font-size: 15px;
+        border-radius: 3px;
+        margin-left: 5px !important;
+        line-height: 1.2rem !important;
     }
+
+    .mark_price-product-detail {
+        text-decoration: line-through;
+        font-size: 17px;
+    }
+
+    .count-product {
+    display: flex;
+    padding: 17px 0px 17px 0px;
+}
+
+    .plus-count-product,
+    .menos-count-product {
+        background-color: #dadada;
+        height: 25px;
+        width: 25px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Centra horizontalmente el contenido */
+    }
+
+    .menos-count-product {
+        margin-right: 26px;
+    }
+
+    .plus-count-product {
+        margin-left: 26px;
+    }
+
+    .max-count-product {
+        margin-left: 28px;
+    }
+
+    .button-buy {
+        background-color: #fa8ab9;
+        border-radius: 45px;
+        height: 55px;
+        width: 80%;
+        margin: 0px 0px 19px 0px;
+        color: #fff;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .text_num {
+        text-align: center;
+        display: flex;
+        border: #00eb33 1px solid;
+        align-items: center;
+    }
+
 
 
 
@@ -47,60 +167,51 @@
 
 {% for product in products %}
 <div class="main-container-detail">
-    <div class="left_product-detail">
-        <section class="image_content-detail" >
-            {% if product.productimage__image_path %}
-                <img class="img_product_detail" src="{{ product.productimage__image_path }}" alt="{{ product.name }}">
-            {% else %}
-            <p>No hay imagen disponible</p>
-            {% endif %}
-        </section>
+    <div class="left-section-detail">
+        {% if product.productimage__image_path %}
+            <img class="img_product_detail" src="{{ product.productimage__image_path }}" alt="{{ product.name }}">
+        {% else %}
+        <p>No hay imagen disponible</p>
+        {% endif %}
     </div>    
 
-
     <div class="right-section-detail">
-        <div  class="product-detail">
-            <a href="{% url 'product_detail' product.name_detail %}" > 
-                
-                <div class="text_product">
-                        <div>
-                            <b class="brand_product">{{ product.productimage__image_path}}</b>
-                        </div>
-                        <span>
-                            <b class="title_product">{{ product.name }}</b>
-                        </span>
-                        <span>
-                            <b class="sales_product">{{ product.description }}</b>
-                        </span>
+        <div class="text_product-detail">
+            <div class="text_product-detail-left">
+                <span class="brand_product-detail">Mamaya</span>
+                <span class="title_product-detail">{{ product.name }}</span>
+                <span class="descrp_product-detail">{{ product.description }}</span>
+            </div>
+
+            <div class="text_product-detail-right">
+                <span class="code_product-detail">Código: 125990175 Cód. tienda: 43194432</span>
+            </div>
+        </div>
+
+        <div class="price_product-detail">
+            <div class="price_product-detail-left">
+                <span>
+                    Despacho a Domicilio
+                </span>
+            </div>
+
+            <div class="price_product-detail-right">
+                <div class="price_descount-product-detail">
+                    <span class="now_price-product-detail">S/ {{ product.price }}</span>
+                    <span class="descount-detail" style="background-color:#EB0029;color:#ffffff" >
+                        -24%
+                    </span>
                 </div>
-                <div class="price_product">
-                    <div >
-                        <ol >
-                            <li  >
-                                <div class="price_number">
-                                    <span class="price_now">S/ {{ product.price }}
-                                    </span>
-                                    <div class="price_number">
-                                        <span class="descount" style="background-color:#EB0029;color:#ffffff" >-24%
-                                        </span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="price_product">
-                                    <span class="price_mark">S/ {{ product.id }}
-                                    </span>
-                                </div>
-                            </li>
-                        </ol>
-                    </div>
-                    <div>
-                        <span>
-                            Despacho a Domicilio
-                        </span>
-                    </div>
+                <span class="mark_price-product-detail">S/ {{ product.price }}</span>
+                <div class="count-product">
+                    <div class="menos-count-product">-</div>
+                    <div class="number-count-product"> 1 </div>
+                    <div class="plus-count-product">+</div>
+                    <div class="max-count-product">Máximo 24 unidades</div>
                 </div>
-            </a>
+                <div class="button-buy">
+                    <div class="text_num">Agregar al Carro</div></div>
+            </div>
         </div>
     </div>   
 </div>
