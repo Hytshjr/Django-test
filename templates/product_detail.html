@@ -190,9 +190,18 @@
 
         <div class="price_product-detail">
             <div class="price_product-detail-left">
+                {% if product.delivery %}
                 <span>
                     Despacho a Domicilio
+                </span> <br>
+                {% endif %}
+
+                {% if product.collect %}
+                <span>
+                    Recogo de producto
                 </span>
+                {% endif %}
+
             </div>
 
             <div class="price_product-detail-right">

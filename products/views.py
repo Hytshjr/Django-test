@@ -20,7 +20,7 @@ def product_categories(request, product_categories):
 
     products_with_images = query_img.values(
         'name', 'name_detail', 'price', 'productimage__image_path'
-        ).filter(categories=product_categories+'\r')
+        ).filter(categories=product_categories)
 
 
     # Pasa la lista a la plantilla
@@ -34,7 +34,7 @@ def product_detail(request, name_detail):
     query_product.prefetch_related('productimage_set'),
 
     product = query_product.values(
-        'name', 'name_detail', 'description', 'price', 'productimage__image_path'
+        'name', 'name_detail', 'description', 'price', 'productimage__image_path', 'delivery', 'collect'
     ).filter(name_detail=name_detail)
 
     # Aquí puedes hacer cualquier cosa con el objeto del producto

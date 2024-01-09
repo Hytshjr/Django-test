@@ -1,12 +1,14 @@
 .pytest_cache/
 .vscode/
 
-monolitic/
+.monolitic/
+.jango/
+jango/
 
 __pycache__/
 .env
 
-./monolitic
+
 
 structure_files.txt
 

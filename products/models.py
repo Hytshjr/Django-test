@@ -7,6 +7,9 @@ class Product(models.Model):
     price       = models.DecimalField(max_digits=10, decimal_places=2)
     stock       = models.IntegerField()
     categories  = models.CharField(max_length=70, default='kawai')
+    delivery    = models.BooleanField(default=False)
+    collect     = models.BooleanField(default=True)
+
 
 
 class ProductImage(models.Model):
