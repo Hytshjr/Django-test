@@ -63,7 +63,17 @@ def create_path_product(file_path, num_rows):
             i = 1 + i
             writer.writerow(product)
 
-    
+
+def get_path_img():
+    directori = 'C:\Hytsh\Django-test\static\images'
+    file_names = os.listdir(directori)
+    paths = []
+    for file in file_names:
+        file = '/static/images/'+ file
+        paths.append(file)
+
+
+    return paths
 
 
 def modify_image():
@@ -97,13 +107,17 @@ def generate_random_product():
     name_detail = fake.sentence(ext_word_list=['ninos', 'adultos', 'colegio', 'trabajo'])
     name_detail = name_detail.replace(' ', '-')  # Reemplazar espacios con -
     name_detail = name_detail.rstrip('.')  # Eliminar el punto al final 
+    categories  = fake.word(ext_word_list=[1, 2, 3, 4])
+    path        = fake.word(ext_word_list=get_path_img())
     description = fake.sentence()
     price       = round(random.uniform(10, 50),2)
     stock       = round(random.randint(0, 100),1)
-    categories  = fake.word(ext_word_list=['ninos', 'adultos', 'colegio', 'trabajo'])
     delivery    = fake.word(ext_word_list=[1, 0])
     collect     = fake.word(ext_word_list=[1, 0])
-    return [name, name_detail, description, price, stock, categories, delivery, collect]
+    return [
+        name, name_detail, path, description, price, stock, delivery, collect, categories
+        ]
+
 
         
 
@@ -113,7 +127,7 @@ def create_product(file_path, num_rows):
         writer = csv.writer(file)
         # Escribir el encabezado
         writer.writerow([
-            'id', 'name', 'name_detail', 'description', 'price', 'stock', 'categories', 'delivery', 'collect'
+            'id', 'name', 'name_detail', 'path','description', 'price', 'stock', 'delivery', 'collect', 'categories'
             ])
         i = 1
         # Escribir filas de datos aleatorios
@@ -122,6 +136,7 @@ def create_product(file_path, num_rows):
             product.insert(0, i)
             i = 1 + i
             writer.writerow(product)
+
 
 
 

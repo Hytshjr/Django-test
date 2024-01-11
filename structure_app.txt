@@ -1,0 +1,59 @@
+myproject/
+|-- manage.py
+|-- myproject/
+|   |-- __init__.py
+|   |-- asgi.py
+|   |-- settings.py
+|   |-- urls.py
+|   |-- wsgi.py
+|-- main/
+|   |-- migrations/
+|   |-- __init__.py
+|   |-- admin.py
+|   |-- apps.py
+|   |-- models.py
+|   |-- tests.py
+|   |-- views.py
+|-- products/
+|   |-- migrations/
+|   |-- __init__.py
+|   |-- admin.py
+|   |-- apps.py
+|   |-- models.py
+|   |-- tests.py
+|   |-- views.py
+|-- cart/
+|   |-- migrations/
+|   |-- __init__.py
+|   |-- admin.py
+|   |-- apps.py
+|   |-- models.py
+|   |-- tests.py
+|   |-- views.py
+|-- static/
+|-- templates/
+|-- requirements.txt
+|-- .gitignore
+|-- .env
+
+
+from products.models import Product
+
+test = Product.objects.all()        # type(test): <class 'django.db.models.query.QuerySet'> 
+context = {'products': test}        # type(context): <class 'dict'> 
+pro_contxt = context['products']    # type(pro_contxt): <class 'django.db.models.query.QuerySet'> 
+for pro in pro_contxt:              #
+    print(pro)                      # type(pro): <class 'products.models.Product'>
+pro_contxt[0]                       # tyoe(pro_contxt[0]): <class 'products.models.Product'>
+
+pro_contxt[0].name                  # query of name, example: laptop
+
+
+test = Product.objects.values(
+    'name','price', 'image_path'
+    )                               # type(test): <class 'django.db.models.query.QuerySet'> 
+context = {'products': test}        # type(context): <class 'dict'> 
+pro_contxt = context['products']    # type(pro_contxt): <class 'django.db.models.query.QuerySet'> 
+pro_contxt[0]                       # tyoe(pro_contxt[0]): <class 'dict'> 
+pro_contxt[0]['name']               # tyoe(pro_contxt[0]): <class 'str'> 
+

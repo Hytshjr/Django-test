@@ -3,13 +3,11 @@
 
 .monolitic/
 .jango/
-jango/
+jango
 
 __pycache__/
 .env
 
 
-
-structure_files.txt
 
 script.sql

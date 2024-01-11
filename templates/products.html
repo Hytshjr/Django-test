@@ -14,8 +14,8 @@
                 <a href="{% url 'product_detail' product.name_detail %}" > 
                     <div class="image_product">
                         <section class="image_content" >
-                            {% if product.productimage__image_path %}
-                                <img class="img_product" src="{{ product.productimage__image_path }}" alt="{{ product.name }}">
+                            {% if product.image_path %}
+                                <img class="img_product" src="/media/{{ product.image_path }}" alt="{{ product.name }}">
                             {% else %}
                             <p>No hay imagen disponible</p>
                             {% endif %}
@@ -23,7 +23,7 @@
                     </div>
                     <div class="text_product">
                             <div>
-                                <b class="brand_product">{{ product.productimage__image_path}}</b>
+                                <b class="brand_product">{{ product.categories__category}}</b>
                             </div>
                             <span>
                                 <b class="title_product">{{ product.name }}</b>
@@ -47,7 +47,7 @@
                                 </li>
                                 <li>
                                     <div class="price_product">
-                                        <span class="price_mark">S/ {{ product.id }}
+                                        <span class="price_mark">S/ {{ product.price }}
                                         </span>
                                     </div>
                                 </li>

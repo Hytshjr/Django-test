@@ -83,7 +83,6 @@
 
     .price_product-detail-left,
     .price_product-detail-right {
-        border: #00eb33 1px solid;
         color: #575555;
 
     }
@@ -156,7 +155,6 @@
     .text_num {
         text-align: center;
         display: flex;
-        border: #00eb33 1px solid;
         align-items: center;
     }
 
@@ -168,8 +166,8 @@
 {% for product in products %}
 <div class="main-container-detail">
     <div class="left-section-detail">
-        {% if product.productimage__image_path %}
-            <img class="img_product_detail" src="{{ product.productimage__image_path }}" alt="{{ product.name }}">
+        {% if product.image_path %}
+            <img class="img_product_detail" src="/media/{{ product.image_path }}" alt="{{ product.name }}">
         {% else %}
         <p>No hay imagen disponible</p>
         {% endif %}
