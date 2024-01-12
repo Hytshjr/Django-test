@@ -38,6 +38,7 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
 
+
 ROOT_URLCONF = 'app.urls'
 
 import os

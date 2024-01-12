@@ -59,13 +59,13 @@ h2 {
 
 </style>
 
-  {% if messages %}
-  <div class="messages">
-      {% for message in messages %}
-      <span{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</span>
-      {% endfor %}
-  </div>
-  {% endif %}
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+        <span{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</span>
+        {% endfor %}
+    </div>
+    {% endif %}
 
   <h2>Iniciar Sesión</h2>
   <form method="post" action="{% url 'login' %}">
@@ -76,7 +76,9 @@ h2 {
     <div class="form-group">
       <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
     </div>
-
+    <div class="form-group">
+        <input name="passwordCheck" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 {% endblock %}
