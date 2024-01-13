@@ -56,8 +56,39 @@ h2 {
     background-color: #ff3385; /* Rosa más intenso al pasar el mouse */
 }
 
+.messages {
+    margin-top: 10px;
+    background-color: #fff;
+    padding: 1px;
+}
+.messages span {
+  color: #5c5c5c;
+  text-align: center;
+  display: block;
+  margin-bottom: 8px;
+  padding: 2px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 600;
+}
 
 </style>
+
+
+
+  <h2>Join Us</h2>
+
+  <form method="post" action="{% url 'register' %}">
+    {% csrf_token %}
+    <div class="form-group">
+      <input name="username" type="text" class="form-control" id="exampleInputUser" placeholder="User" required>
+    </div>
+    <div class="form-group">
+      <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+    </div>
+    <div class="form-group">
+        <input name="passwordCheck" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+    </div>
 
     {% if messages %}
     <div class="messages">
@@ -67,18 +98,6 @@ h2 {
     </div>
     {% endif %}
 
-  <h2>Iniciar Sesión</h2>
-  <form method="post" action="{% url 'login' %}">
-    {% csrf_token %}
-    <div class="form-group">
-      <input name="username" type="text" class="form-control" id="exampleInputUser" placeholder="User">
-    </div>
-    <div class="form-group">
-      <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-    </div>
-    <div class="form-group">
-        <input name="passwordCheck" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-      </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Register</button>
   </form>
 {% endblock %}

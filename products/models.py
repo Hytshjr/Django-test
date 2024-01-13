@@ -27,5 +27,8 @@ class Product(models.Model):
 
     def __str__(self):
         return f'{self.name}, {self.price}'
+    
+    def total_quantity_in_carts(self):
+        return sum(cart_item.quantity for cart_item in self.cartitem_set.all())
 
 

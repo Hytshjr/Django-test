@@ -88,6 +88,14 @@ ol {
     width: auto;  /* Ajusta según sea necesario */
 }
 
+.header-right {
+    /* Estilos para el área de la derecha */
+    margin-right: 1.7em;
+    height: 35px;
+    width: auto;
+}
+
+
 .header-link {
     flex-grow: 1;
     text-align: center;  /* Agrega esta línea */
@@ -102,13 +110,14 @@ nav a {
     display: inline-block;  /* Añade esto para que los enlaces se muestren en una línea */
 }
 
+.header-right svg {
+    fill: #ff66b2; /* o el color que desees */
+    height: 38px;
+    width: 38px;
+  }
 
 
 
-.header-right {
-    /* Estilos para el área de la derecha */
-    margin-right: 1.3em;
-}
 
 /* ------------------------------------------------ */
 
