@@ -211,16 +211,61 @@
                 </div>
                 <span class="mark_price-product-detail">S/ {{ product.price }}</span>
                 <div class="count-product">
-                    <div class="menos-count-product">-</div>
-                    <div class="number-count-product"> 1 </div>
-                    <div class="plus-count-product">+</div>
+                    <div class="menos-count-product"><button>-</button></div>
+                    <div class="number-count-product" id="quantity">1</div>
+                    <div class="plus-count-product"><button>+</button></div>
                     <div class="max-count-product">Máximo 24 unidades</div>
                 </div>
                 <div class="button-buy">
-                    <div class="text_num">Agregar al Carro</div></div>
+                    <button id="add-to-cart-btn">Add to Cart</button>
+                </div>
             </div>
         </div>
     </div>   
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const quantityElement = document.getElementById('quantity');
+        const maxQuantity = 24;
+        const minQuantity = 0;
+
+        document.querySelector('.menos-count-product').addEventListener('click', function () {
+            let currentQuantity = parseInt(quantityElement.textContent);
+            if (currentQuantity > minQuantity) {
+                quantityElement.textContent = currentQuantity - 1;
+            }
+        });
+
+        document.querySelector('.plus-count-product').addEventListener('click', function () {
+            let currentQuantity = parseInt(quantityElement.textContent);
+            if (currentQuantity < maxQuantity) {
+                quantityElement.textContent = currentQuantity + 1;
+            }
+        });
+    });
+
+    document.getElementById('add-to-cart-btn').addEventListener('click', function() {
+        const productId = '{{ product.id}}';  // Reemplaza con el ID real del producto
+        const quantity =   parseInt(document.getElementById('quantity').textContent); // Puedes ajustar esto según lo que desees
+
+        const csrfToken = '{{ csrf_token }}';
+
+        fetch(`/cart/add_to_cart/${productId}/`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': csrfToken,
+            },
+            body: JSON.stringify({ quantity: quantity }),
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error('Error:', error));
+    });
+</script>
+
+
+
 {% endfor %}
 {% endblock content %}

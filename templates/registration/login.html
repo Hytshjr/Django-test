@@ -77,8 +77,7 @@ h2 {
 
 
   <h2>Sign In</h2>
-  <form method="post" action="{% url 'login' %}">
-    {% csrf_token %}
+  <form method="post" action="{% url 'login' %}">{% csrf_token %}
     <div class="form-group">
       <input name="username" type="text" class="form-control" id="exampleInputUser" placeholder="User" required>
     </div>
