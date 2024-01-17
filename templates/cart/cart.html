@@ -2,8 +2,139 @@
 {% load static %}
 
 {% block content %}
-<div class="main-container">
-    <span>cart</span>
+<style>
+    .main-container-cart {
+        display: flex;
+        width: 1263px;
+    }
+
+    .right-section-cart {
+        flex: 1;
+    }
+
+    .left-section-cart,
+    .right-section-cart {
+        padding: 37px 0px 37px 0px;
+    }
+
+    .right-section-cart {
+        padding-right: 37px;
+        padding-left: 19.5px;
+    }
+
+    .left-section-cart {
+        height: 460px;
+        width:70%;
+        padding-right: 19.5px;
+        padding-left: 37px;
+    }
+
+    .left-section-text {
+        font-size: 30px;
+        font-weight: 100;
+        color: #2f2f2f;
+    }
+
+    .left-section-detail {
+        margin-top: 33px;
+        height: 190px;
+        width: 94%;
+        background-color: #fff;
+        border-radius: 20px;
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+    }
+
+    .price-content-cart,
+    .text-content-cart,
+    .image-product-cart {
+        border: #2f2f2f 1px solid;
+
+    }
+
+    .image-product-cart {
+        flex: 1;
+        width: 60px;
+        background-color: aqua ;
+
+
+    }
+
+    .image-content-cart {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 70px;
+        width: 60px;
+    }
+
+    .quantity-content-cart {
+        display: flex;
+        padding: 0px 10px 0px 10px;
+    }
+
+    .plus-count-product,
+    .menos-count-product {
+        background-color: #dadada;
+        height: 25px;
+        width: 25px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Centra horizontalmente el contenido */
+    }
+
+    .menos-count-product {
+        margin-right: 26px;
+    }
+
+    .plus-count-product {
+        margin-left: 26px;
+    }
+
+    .max-count-product {
+        margin-left: 28px;
+    }
+</style>
+
+<div class="main-container-cart">
+    <div class="left-section-cart">
+        <div class="left-section-text">
+            <span> <strong>Cart</strong> ({{ products|length }} productos)</span>
+        </div>
+    {% for product in products %}
+        <div class="left-section-detail">
+            <div class="image-product-cart">
+                <section class="image-content-cart" >
+                    {% if product.image_path %}
+                        <img class="img_product" src="/media/{{ product.image_path }}" alt="{{ product.name }}">
+                    {% else %}
+                    <p>No hay imagen disponible</p>
+                    {% endif %}
+                </section>
+            </div>
+            <div class="text-content-cart">
+                {{ product.name }}
+            </div>
+            <div class="price-content-cart">
+                {{ product.price }}
+            </div>
+            <div class="quantity-content-cart">
+                <div class="menos-count-product"><button>-</button></div>
+                    <div class="number-count-product" id="quantity">{{ product.cart_items__quantity }}</div>
+                    <div class="plus-count-product"><button>+</button></div>
+            </div>
+
+        </div>
+    {% endfor %}
+
+    </div>
+
+    <div class="right-section-cart">
+
+    </div>
+
+
 </div>
 
 {% endblock content %}

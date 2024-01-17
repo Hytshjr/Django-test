@@ -144,7 +144,8 @@
         border-radius: 45px;
         height: 55px;
         width: 80%;
-        margin: 0px 0px 19px 0px;
+        font-size: 23px;
+        margin: 0px 0px 8px 0px;
         color: #fff;
         font-weight: 600;
         display: flex;
@@ -164,6 +165,21 @@
         color: white;
     }
 
+    .button-buy-status {
+        background-color: #fff1f6   ;
+        border-radius: 8px;
+        width: 80%;
+        font-size: 14px;
+        color: #3c3c3c;
+        display: flex;
+        align-items: center;
+        font-weight: 100;
+    }
+
+    .text-buy-state {
+        margin-left: 20px;
+
+    }
 
 
 
@@ -231,6 +247,7 @@
                 </div>
                 <div >
                     <button class="button-buy" id="add-to-cart-btn">Add to Cart</button>
+                    <div class="button-buy-status"><span  id="status-message" class="text-buy-state"></span></div>
                 </div>
             </div>
         </div>
@@ -238,24 +255,40 @@
 </div>
 
 <script>
-    document.getElementById('add-to-cart-btn').addEventListener('click', function() {
-        const productId = '{{ product.id}}';  // Reemplaza con el ID real del producto
-        const quantity =   parseInt(document.getElementById('quantity').textContent); // Puedes ajustar esto según lo que desees
+document.getElementById('add-to-cart-btn').addEventListener('click', function() {
+    const productId = '{{ product.id }}';
+    const quantity = parseInt(document.getElementById('quantity').textContent);
+    const csrfToken = '{{ csrf_token }}';
 
-        const csrfToken = '{{ csrf_token }}';
+    const statusMessage = document.getElementById('status-message');
 
-        fetch(`/cart/add_to_cart/${productId}/`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRFToken': csrfToken,
-            },
-            body: JSON.stringify({ quantity: quantity }),
-        })
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(error => console.error('Error:', error));
+    fetch(`/cart/add_to_cart/${productId}/`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': csrfToken,
+        },
+        body: JSON.stringify({ quantity: quantity }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Actualiza el mensaje después de que la solicitud se completa con éxito
+        statusMessage.innerText = 'Product added';
+        statusMessage.style.marginTop = '10px'; // Ajusta según sea necesario
+        statusMessage.style.marginBottom = '10px'; // Ajusta según sea necesario
+        statusMessage.style.display = 'block'; // Muestra el elemento
+        console.log(data);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        // Actualiza el mensaje de error
+        statusMessage.innerText = 'Error adding product';
+        statusMessage.style.marginTop = '10px'; // Ajusta según sea necesario
+        statusMessage.style.marginBottom = '10px'; // Ajusta según sea necesario
+        statusMessage.style.display = 'block'; // Muestra el elemento
     });
+});
+
 
     document.addEventListener('DOMContentLoaded', function () {
         const quantityElement = document.getElementById('quantity');

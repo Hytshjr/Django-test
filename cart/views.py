@@ -10,7 +10,15 @@ import json
 
 # Create your views here.
 def cart(request):
-    return render(request, 'cart/cart.html')
+    user_id = request.user.id
+    cart = Product.objects
+    products = cart.values(
+        'name', 'price', 'image_path', 'cart_items__quantity', 'id'
+        ).filter(cart_items__user_id=user_id)
+
+    context = {'products': products}
+
+    return render(request, 'cart/cart.html', context)
 
 def add_to_cart(request, product_id):
     if request.user.is_authenticated:
