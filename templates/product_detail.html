@@ -246,7 +246,11 @@
                 <span class="mark_price-product-detail">S/ {{ product.price }}</span>
                 <div class="count-product">
                     <div class="menos-count-product"><button>-</button></div>
+                    {% if product.cart_items__quantity %}
                     <div class="number-count-product" id="quantity">{{ product.cart_items__quantity }}</div>
+                    {% else %}
+                    <div class="number-count-product" id="quantity">1</div>
+                    {% endif %}
                     <div class="plus-count-product"><button>+</button></div>
                     <div class="max-count-product">Máximo 24 unidades</div>
                 </div>

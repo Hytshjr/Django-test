@@ -47,7 +47,7 @@ def add_to_cart(request, product_id):
 
 def delete_to_cart(request, product_id):
     if request.user.is_authenticated:
-        user_id = request.user.idx
+        user_id = request.user.id
         user = get_object_or_404(User, id=user_id)
         product = get_object_or_404(Product, id=product_id)
 
