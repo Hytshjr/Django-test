@@ -22,36 +22,33 @@
 
     .left-section-cart,
     .right-section-cart {
-        padding: 37px 0px 37px 0px;
-    }
-
-    .right-section-cart {
-        padding-right: 37px;
-        padding-left: 19.5px;
-        background-color: #dadada;
+        padding: 37px 10px 37px 19px;
     }
 
     .left-section-cart {
-        width:70%;
-        padding-right: 19.5px;
-        padding-left: 37px;
+        width:65%;
+
     }
 
+    .right-section-text,
     .left-section-text {
         font-size: 30px;
         font-weight: 100;
         color: #2f2f2f;
     }
-
+    
+    .right-section-detail,
     .left-section-cart-detail {
         margin-top: 30px;
         height: 190px;
-        width: 94%;
+        width: 100%;
         background-color: #fff;
         border-radius: 20px;
         box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
-        display: flex;
+    }
 
+    .left-section-cart-detail {
+        display: flex;
     }
 
     .left-section-detail {
@@ -60,13 +57,11 @@
         width: 100%;
         box-sizing: border-box;
         font-family: 'Geologica', sans-serif;
-
     }
 
     .price-content-cart,
     .text-content-cart {
         flex: 1;
-
     }
 
     .text-content-cart {
@@ -129,6 +124,63 @@
         color: #333333;
 
     }
+
+    .sales-detail-cart {
+    flex: 1;
+}
+
+    .button-buy {
+    background-color: #fa8ab9;
+    border-radius: 45px;
+    height: 45px;
+    width: 90%;
+    font-size: 23px;
+    margin: 8px 0; /* Ajusta según sea necesario */
+    color: #fff;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .button-buy:hover {
+        background-color: #ed649d;
+        color: #fff;
+    }
+    
+    .sales-total-products {
+        display: flex;
+        padding-bottom: 11px;
+    }
+
+
+
+    .sales-detail-cart {
+        padding: 36px 0px 17px 0px;
+        align-items: center;
+        align-content: center;
+        align-items: center;
+        align-self: center;
+        box-sizing: border-box;
+    }
+
+    .sales-total-detail {
+        font-family: 'Geologica', sans-serif;
+        color: #333333;
+        padding: 0px 15px 0px 15px;
+        box-sizing: border-box;
+    }
+
+    .sales-total-count {
+        flex: 1;
+    }
+
+    .button-final-buy {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra horizontalmente */
+    }
+
 
 </style>
 
@@ -201,6 +253,29 @@
     </div>
 
     <div class="right-section-cart">
+        <div class="right-section-text">
+            <span> <strong>Resumen de la orden</strong></span>
+        </div>
+
+        <div class="right-section-detail">
+            <div class="sales-detail-cart">
+                <div class="test">
+                    <div class="sales-total-detail">
+                        <div class="sales-total-products">
+                            <div class="sales-total-count">Productos ({{ products|length }})</div>
+                            <div class="sales-total-price">S/. {{ products|length }}</div>
+                        </div>
+                        <div class="sales-total-products">
+                            <div class="sales-total-count">Total: </div>
+                            <div class="sales-total-price">S/. {{ products|length }}</div>
+                        </div>
+                    </div>
+                    <div class="button-final-buy">
+                        <button class="button-buy" id="add-to-cart-btn">Continuar compra</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 

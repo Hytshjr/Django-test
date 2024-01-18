@@ -4,7 +4,6 @@ from django.http import JsonResponse
 from django.http import JsonResponse
 from products.models import Product
 from django.shortcuts import render
-from django.contrib import messages
 from .models import CartItem
 import json
 
