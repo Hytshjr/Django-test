@@ -33,7 +33,7 @@ def product_categories(request, product_categories):
 
 def product_detail(request, name_detail):
     product = Product.objects.values(
-        'id', 'name', 'name_detail', 'price', 'image_path', 'description', 'delivery', 'collect'
+        'id', 'name', 'name_detail', 'price', 'image_path', 'description', 'delivery', 'collect', 'cart_items__quantity'
     ).filter(name_detail=name_detail)
 
     # Aquí puedes hacer cualquier cosa con el objeto del producto

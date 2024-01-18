@@ -6,8 +6,16 @@
 <style>
     .main-container-detail {
         background-color: #fff;
+        flex-direction: row;
         display: flex;
         width: 1263px;
+    }
+
+    /* Media query para pantallas pequeñas */
+    @media screen and (max-width: 1280px) {
+    .main-container-detail {
+        width: 100%; /* En pantallas más pequeñas, ocupa todo el ancho */
+    }
     }
 
     .text_product-detail,
@@ -33,18 +41,19 @@
     }
 
     .left-section-detail {
-        height: 460px;
-        width:370px;
         padding-right: 19.5px;
         padding-left: 37px;
+        width: 30%;
+        max-width: 300px;
+
     }
 
     .img_product_detail {
-        max-width: 100%;
-        max-height: 100%;
-        width: 100%;
-        height: 100%;
+        max-width: 100%; /* La imagen no será más ancha que su contenedor */
+        height: auto; /* Mantiene la proporción original de la imagen */
     }
+
+    
     .brand_product-detail  {
         text-transform: none;
         display: block;
@@ -114,7 +123,7 @@
     .count-product {
     display: flex;
     padding: 17px 0px 17px 0px;
-}
+    }
 
     .plus-count-product,
     .menos-count-product {
@@ -178,11 +187,7 @@
 
     .text-buy-state {
         margin-left: 20px;
-
     }
-
-
-
 </style>
 
 {% for product in products %}
@@ -241,7 +246,7 @@
                 <span class="mark_price-product-detail">S/ {{ product.price }}</span>
                 <div class="count-product">
                     <div class="menos-count-product"><button>-</button></div>
-                    <div class="number-count-product" id="quantity">1</div>
+                    <div class="number-count-product" id="quantity">{{ product.cart_items__quantity }}</div>
                     <div class="plus-count-product"><button>+</button></div>
                     <div class="max-count-product">Máximo 24 unidades</div>
                 </div>

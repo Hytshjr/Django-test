@@ -4,8 +4,16 @@
 {% block content %}
 <style>
     .main-container-cart {
+        flex-direction: row;
         display: flex;
         width: 1263px;
+    }
+
+    /* Media query para pantallas pequeñas */
+    @media screen and (max-width: 1280px) {
+        .main-container-cart {
+            width: 100%; /* En pantallas más pequeñas, ocupa todo el ancho */
+        }
     }
 
     .right-section-cart {
@@ -20,10 +28,10 @@
     .right-section-cart {
         padding-right: 37px;
         padding-left: 19.5px;
+        background-color: #dadada;
     }
 
     .left-section-cart {
-        height: 460px;
         width:70%;
         padding-right: 19.5px;
         padding-left: 37px;
@@ -35,66 +43,93 @@
         color: #2f2f2f;
     }
 
-    .left-section-detail {
-        margin-top: 33px;
+    .left-section-cart-detail {
+        margin-top: 30px;
         height: 190px;
         width: 94%;
         background-color: #fff;
         border-radius: 20px;
         box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
         display: flex;
+
+    }
+
+    .left-section-detail {
+        padding: 15px;
+        display: flex;
+        width: 100%;
+        box-sizing: border-box;
+        font-family: 'Geologica', sans-serif;
+
     }
 
     .price-content-cart,
-    .text-content-cart,
-    .image-product-cart {
-        border: #2f2f2f 1px solid;
+    .text-content-cart {
+        flex: 1;
 
     }
 
-    .image-product-cart {
-        flex: 1;
-        width: 60px;
-        background-color: aqua ;
+    .text-content-cart {
+        padding-left: 10px;
+    }
 
+    .product-name {
+        font-size: 20px;
+    }
 
+    .brand-name {
+        font-family:Arial, Helvetica, sans-serif;
+        font-weight: 200;
+        font-size: 15px;
+    }
+
+    .brand-sale {
+        font-family:Arial, Helvetica, sans-serif;
+        font-weight: 100;
+        font-size: 12px;
     }
 
     .image-content-cart {
-        display: flex;
         align-items: center;
         justify-content: center;
-        height: 70px;
-        width: 60px;
+        height: 100%;
+        width: 150px;
     }
 
     .quantity-content-cart {
         display: flex;
-        padding: 0px 10px 0px 10px;
+        padding: 20px 10px 0px 10px;
     }
 
     .plus-count-product,
     .menos-count-product {
         background-color: #dadada;
-        height: 25px;
-        width: 25px;
-        border-radius: 4px;
+        height: 27px;
+        width: 27px;
+        border-radius: 8px;
         display: flex;
         align-items: center;
         justify-content: center; /* Centra horizontalmente el contenido */
     }
 
     .menos-count-product {
-        margin-right: 26px;
+        margin-right: 19px;
     }
 
     .plus-count-product {
-        margin-left: 26px;
+        margin-left: 19px;
     }
 
     .max-count-product {
-        margin-left: 28px;
+        margin-left: 0px;
+        text-align: center;
     }
+
+    .text-content-cart a {
+        color: #333333;
+
+    }
+
 </style>
 
 <div class="main-container-cart">
@@ -103,28 +138,63 @@
             <span> <strong>Cart</strong> ({{ products|length }} productos)</span>
         </div>
     {% for product in products %}
-        <div class="left-section-detail">
-            <div class="image-product-cart">
-                <section class="image-content-cart" >
-                    {% if product.image_path %}
-                        <img class="img_product" src="/media/{{ product.image_path }}" alt="{{ product.name }}">
-                    {% else %}
-                    <p>No hay imagen disponible</p>
-                    {% endif %}
-                </section>
+        <div class="left-section-cart-detail">
+            <div class="left-section-detail">
+                <div class="image-product-cart">
+                    <a href="{% url 'product_detail' product.name_detail %}">
+                        <section class="image-content-cart" >
+                            {% if product.image_path %}
+                                <img class="img_product" src="/media/{{ product.image_path }}" alt="{{ product.name }}">
+                            {% else %}
+                            <p>No hay imagen disponible</p>
+                            {% endif %}
+                        </section>
+                    </a>
+                </div>
+                <div class="text-content-cart">
+                    <a href="{% url 'product_detail' product.name_detail %}">
+                        <span class="product-name">{{ product.name }}</span><br>
+                        <span class="brand-name">LG</span><br>
+                        <span class="brand-sale">Vendido por Falabella</span>
+                    </a>
+                </div>
+                <div class="price-content-cart">
+                    <div >
+                        <ol >
+                            <li  >
+                                <div class="price_number">
+                                    <span class="price_now">S/ {{ product.price }}
+                                    </span>
+                                    <div class="price_number">
+                                        <span class="descount" style="background-color:#EB0029;color:#ffffff" >-24%
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="price_product">
+                                    <span class="price_mark">S/ {{ product.price }}
+                                    </span>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div>
+                    <ol>
+                        <li>
+                            <div class="quantity-content-cart">
+                                <div class="menos-count-product"><button>-</button></div>
+                                <div class="number-count-product" id="quantity" data-cartid="{{ product.id}}">{{ product.cart_items__quantity }}</div>
+                                <div class="plus-count-product"><button>+</button></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="max-count-product"><button>Máx 10 unidades</button></div>
+                        </li>
+                    </ol>
+                </div>
             </div>
-            <div class="text-content-cart">
-                {{ product.name }}
-            </div>
-            <div class="price-content-cart">
-                {{ product.price }}
-            </div>
-            <div class="quantity-content-cart">
-                <div class="menos-count-product"><button>-</button></div>
-                    <div class="number-count-product" id="quantity">{{ product.cart_items__quantity }}</div>
-                    <div class="plus-count-product"><button>+</button></div>
-            </div>
-
         </div>
     {% endfor %}
 
@@ -136,6 +206,82 @@
 
 
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const maxQuantity = 24;
+    const minQuantity = 0   ;
+
+    // Obtén todos los elementos con la clase menos-count-product y más-count-product
+    const minusButtons = document.querySelectorAll('.menos-count-product button');
+    const plusButtons = document.querySelectorAll('.plus-count-product button');
+    const quantityElements = document.querySelectorAll('.number-count-product');
+
+    // Agrega el evento a cada botón menos
+    minusButtons.forEach(function (button, index) {
+        button.addEventListener('click', function () {
+            let currentQuantity = parseInt(quantityElements[index].textContent);
+            if (currentQuantity > minQuantity) {
+                quantityElements[index].textContent = currentQuantity - 1;
+
+                if (quantityElements[index].textContent == 0) {
+                    console.log("test:", true)
+                    const csrfToken = '{{ csrf_token }}';
+                    const cartId = quantityElements[index].dataset.cartid;
+
+                    fetch(`/cart/delete_to_cart/${cartId}/`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRFToken': csrfToken,
+                        },
+                        body: JSON.stringify({ }),
+                    })
+
+                } else {
+                    const quantity = 1
+                    const csrfToken = '{{ csrf_token }}';
+                    const cartId = quantityElements[index].dataset.cartid;
+
+                    fetch(`/cart/add_to_cart/${cartId}/`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRFToken': csrfToken,
+                        },
+                        body: JSON.stringify({ quantity: quantityElements[index].textContent }),
+                    })
+                }
+            }
+
+        });
+    });
+
+    // Agrega el evento a cada botón más
+    plusButtons.forEach(function (button, index) {
+        button.addEventListener('click', function () {
+            let currentQuantity = parseInt(quantityElements[index].textContent);
+            if (currentQuantity < maxQuantity) {
+                quantityElements[index].textContent = currentQuantity + 1;
+
+                const quantity = 1
+                const csrfToken = '{{ csrf_token }}';
+                const cartId = quantityElements[index].dataset.cartid;
+
+                fetch(`/cart/add_to_cart/${cartId}/`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': csrfToken,
+                    },
+                    body: JSON.stringify({ quantity: quantityElements[index].textContent }),
+                })
+
+            }
+        });
+    });
+});
+</script>
 
 {% endblock content %}
 

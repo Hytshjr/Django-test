@@ -17,7 +17,6 @@ body {
     flex-direction: column;
     min-height: 100vh;
     align-items: center;
-    justify-content: center;
 }
 
 a {
@@ -35,7 +34,6 @@ ol {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px; /* Ajusta el espaciado según tus preferencias */
     background-color: #ffffff; /* Agrega un color de fondo para visualizar mejor la sección pre-header */
 }
 
@@ -297,11 +295,5 @@ button {
     cursor: pointer;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 1em;
-    text-align: center;
-    margin-top: auto;
-}
+
 
