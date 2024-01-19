@@ -1,14 +1,18 @@
+
+from django.contrib.auth.decorators import user_passes_test
 from django.contrib.auth import login, logout, authenticate
 from django.shortcuts import render, redirect
-from django.contrib import messages
 from django.contrib.auth.models import User
+from django.contrib import messages
 
 
+def user_not_authenticated(user):
+    return not user.is_authenticated
 
 def index(request):
     return render(request, 'home.html')
 
-
+@user_passes_test(user_not_authenticated, login_url='home')
 def register(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -33,7 +37,7 @@ def register(request):
 
     return render(request, 'registration/register.html')
 
-
+@user_passes_test(user_not_authenticated, login_url='home')
 def user_login(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -54,6 +58,7 @@ def user_login(request):
             messages.error(request, 'Password is incorrect')
 
     return render(request, 'registration/login.html')
+
 
 def user_logout(request):
     logout(request)

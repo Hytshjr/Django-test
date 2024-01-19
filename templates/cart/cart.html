@@ -261,15 +261,17 @@
             <div class="sales-detail-cart">
                 <div class="test">
                     <div class="sales-total-detail">
+                    {% for total in price %}
                         <div class="sales-total-products">
                             <div class="sales-total-count">Productos ({{ products|length }})</div>
-                            <div class="sales-total-price">S/. {{ products|length }}</div>
+                            <div class="sales-total-price">S/. {{ total }}</div>
                         </div>
                         <div class="sales-total-products">
                             <div class="sales-total-count">Total: </div>
-                            <div class="sales-total-price">S/. {{ products|length }}</div>
+                            <div class="sales-total-price">S/. {{ total }}</div>
                         </div>
                     </div>
+                    {% endfor %}
                     <div class="button-final-buy">
                         <button class="button-buy" id="add-to-cart-btn">Continuar compra</button>
                     </div>

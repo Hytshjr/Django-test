@@ -156,18 +156,18 @@
     }
 
     .button-buy {
-    background-color: #fa8ab9;
-    border-radius: 45px;
-    height: 55px;
-    font-size: 23px;
-    margin: 0 auto 8px auto; /* Modificado para centrar horizontalmente */
-    color: #fff;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
+        background-color: #fa8ab9;
+        border-radius: 45px;
+        height: 55px;
+        width: 80%;
+        font-size: 23px;
+        margin: 0px 0px 8px 0px;
+        color: #fff;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
     .button-buy:hover {
         background-color: #ed649d;
@@ -265,37 +265,48 @@
 
 <script>
 document.getElementById('add-to-cart-btn').addEventListener('click', function() {
-    const productId = '{{ product.id }}';
-    const quantity = parseInt(document.getElementById('quantity').textContent);
-    const csrfToken = '{{ csrf_token }}';
-
+    const user = '{{user.is_authenticated}}';
     const statusMessage = document.getElementById('status-message');
 
-    fetch(`/cart/add_to_cart/${productId}/`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-CSRFToken': csrfToken,
-        },
-        body: JSON.stringify({ quantity: quantity }),
-    })
-    .then(response => response.json())
-    .then(data => {
-        // Actualiza el mensaje después de que la solicitud se completa con éxito
-        statusMessage.innerText = 'Product added';
-        statusMessage.style.marginTop = '10px'; // Ajusta según sea necesario
-        statusMessage.style.marginBottom = '10px'; // Ajusta según sea necesario
-        statusMessage.style.display = 'block'; // Muestra el elemento
-        console.log(data);
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        // Actualiza el mensaje de error
-        statusMessage.innerText = 'Error adding product';
-        statusMessage.style.marginTop = '10px'; // Ajusta según sea necesario
-        statusMessage.style.marginBottom = '10px'; // Ajusta según sea necesario
-        statusMessage.style.display = 'block'; // Muestra el elemento
-    });
+    if (user == true) {
+        const productId = '{{ product.id }}';
+        const quantity = parseInt(document.getElementById('quantity').textContent);
+        const csrfToken = '{{ csrf_token }}';
+
+
+        fetch(`/cart/add_to_cart/${productId}/`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': csrfToken,
+            },
+            body: JSON.stringify({ quantity: quantity }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Actualiza el mensaje después de que la solicitud se completa con éxito
+            statusMessage.innerText = 'Product added';
+            statusMessage.style.marginTop = '10px'; // Ajusta según sea necesario
+            statusMessage.style.marginBottom = '10px'; // Ajusta según sea necesario
+            statusMessage.style.display = 'block'; // Muestra el elemento
+            console.log(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            // Actualiza el mensaje de error
+            statusMessage.innerText = 'Error adding product';
+            statusMessage.style.marginTop = '10px'; // Ajusta según sea necesario
+            statusMessage.style.marginBottom = '10px'; // Ajusta según sea necesario
+            statusMessage.style.display = 'block'; // Muestra el elemento
+        });
+
+    } else {
+            // Actualiza el mensaje de error
+            statusMessage.innerText = 'Need login to buy.';
+            statusMessage.style.marginTop = '10px'; // Ajusta según sea necesario
+            statusMessage.style.marginBottom = '10px'; // Ajusta según sea necesario
+            statusMessage.style.display = 'block'; // Muestra el elemento
+    }
 });
 
 

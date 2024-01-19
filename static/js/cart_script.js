@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 const cartId = quantityElements[index].dataset.cartid;
                 updateQuantity(cartId, quantityElements[index].textContent, 'add_to_cart', csrfToken)
-                    .then(() => null)
+                    .then(() => window.location.reload())
                     .catch(error => console.error('Error:', error));
             }
         }
@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const cartId = quantityElements[index].dataset.cartid;
             updateQuantity(cartId, quantityElements[index].textContent,'add_to_cart', csrfToken)
+                .then(() => window.location.reload())
                 .catch(error => console.error('Error:', error));
         }
     }

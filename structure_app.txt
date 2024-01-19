@@ -57,3 +57,21 @@ pro_contxt = context['products']    # type(pro_contxt): <class 'django.db.models
 pro_contxt[0]                       # tyoe(pro_contxt[0]): <class 'dict'> 
 pro_contxt[0]['name']               # tyoe(pro_contxt[0]): <class 'str'> 
 
+
+
+Content Builder
+|--TOTTUS APP
+|   |--1. TÁCTICO
+|   |   |--1. EMKT
+|   |   |   |--2024
+|   |   |   |   |--01 Enero
+|   |   |   |   |   |--MAQUETADOS
+|   |   |   |   |   |   |-- KV TOTTUS - JOURNEY 3 COMPRAS_1
+|   |   |   |   |   |   |-- KV TOTTUS - JOURNEY 3 COMPRAS_2
+|   |   |   |   |   |   |-- KV TOTTUS - JOURNEY 3 COMPRAS_3
+|   |   |   |   |   |   |-- KV TOTTUS - JOURNEY 3 COMPRAS_4
+|   |   |   |   |   |   |-- KV TOTTUS - JOURNEY 3 COMPRAS_5
+|   |   |   |   |   |   |-- KV TOTTUS - JOURNEY 3 COMPRAS_6
+|   |   |   |   |   |   |-- KV TOTTUS - JOURNEY 3 COMPRAS_7
+|   |   |   |   |   |   |-- KV TOTTUS - JOURNEY 3 COMPRAS_8
+|   |   |   |   |   |   |-- KV TOTTUS - JOURNEY 3 COMPRAS_9
