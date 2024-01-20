@@ -30,7 +30,7 @@ def cart(request):
 
         context = {'products': products, 'price':total_price}
 
-        return render(request, 'cart/cart.html', context)
+        return render(request, 'cart.html', context)
     else:
         messages.error(request, 'You need to loged.')
         return redirect('login')

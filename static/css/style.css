@@ -116,7 +116,6 @@ nav a {
 
 
 
-
 /* ------------------------------------------------ */
 
 section {
@@ -140,14 +139,6 @@ section {
     flex-wrap: wrap;
 }
 
-
-.main-container {
-    display: flex;
-    flex-direction: row; /* Cambiado a fila para que las secciones estén una al lado de la otra */
-    width: 1263px;
-}
-
-
 .left-section {
     flex: 1;
     background-color: #ffffff;
@@ -157,6 +148,12 @@ section {
 
 }
 
+.main-container {
+    display: flex;
+    flex-direction: row; /* Cambiado a fila para que las secciones estén una al lado de la otra */
+    width: 1263px;
+}
+
 /* Media query para pantallas pequeñas */
 @media screen and (max-width: 1280px) {
     .main-container {
@@ -164,136 +161,6 @@ section {
     }
 }
 
-
-.product {
-    padding: 1em;
-    width: 12.1em;
-    margin-left: 11px;
-    margin-top: 12px;
-    background-color: #ffffff;
-    border: #333 solid 0px;
-}
-
-.image_product {
-    margin: 0px;
-
-    max-width: 100%; /* La imagen no será más ancha que su contenedor */
-    overflow: hidden; /* Evita que la imagen se desborde del contenedor */
-
-}
-
-.image_content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 240px;
-}
-
-.img_product {
-    max-width: 100%;
-    max-height: 100%;
-    width: 100%;
-    height: 100%;
-}
-
-.text_product {
-    padding: 1em 0em 1em 0em;
-    height: auto;
-}
-
-.brand_product {
-    padding: 0em 0em 0.5em 0em;
-}
-
-.sales_product{
-    font-size: 13px;
-    line-height: 12px;
-    color: #767676;
-    -webkit-letter-spacing: 0;
-    -moz-letter-spacing: 0;
-    -ms-letter-spacing: 0;
-    letter-spacing: 0;
-}
-
-.sales_product{
-    margin-top: 4px;
-    text-transform: none;
-    display: block;
-}
-
-.title_product {
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 16px;
-    color: #4A4A4A;
-}
-
-.brand_product {
-    margin-top: 4px;
-    text-transform: none;
-    display: inline-block;
-    font-size: 13px;
-    color: #888;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-.brand_product {
-    font-family: inherit;
-    font-size: 13px;
-    line-height: 16px;
-    color: #333;
-    margin-top: 8px;
-}
-
-/* Color de precio */
-
-.price_product{
-    color: #767676;
-}
-
-.price_number {
-    font-size: 19px;
-}
-
-.price_mark{
-    -webkit-text-decoration: line-through;
-    text-decoration: line-through;
-    font-size: 13px;
-}
-/*Precio */
-
-/* Rojo descuento */
-.descount {
-    padding: 0px 6px;
-    font-size: 11px;
-    border-radius: 3px;
-    margin-left: 5px !important;
-    line-height: 1.2rem !important;
-}
-
-.price_number {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-}
-
-button {
-    padding: 0;
-    margin: 0;
-    border: none;
-    background: none;
-    cursor: pointer;
-}
 
 
 

@@ -12,7 +12,7 @@
 
 
 {% block content %}
-<div class="main-container-cart">
+<div class="main-container">
     <div class="left-section-cart">
         <div class="left-section-text">
             <span> <strong>Cart</strong> ({{ products|length }} productos)</span>
@@ -100,11 +100,11 @@
                         </div>
                     </div>
                     {% endfor %}
-                    <div class="button-final-buy">
-                        <a href="{% url 'home' %}">
+                    <a href="{% url 'delivery' %}">
+                        <div class="button-final-buy">
                             <button class="button-buy" id="add-to-cart-btn">Continuar compra</button>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>

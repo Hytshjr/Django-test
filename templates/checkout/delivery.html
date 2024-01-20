@@ -1,0 +1,59 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block additional_js %}
+    <script>const csrfToken = '{{ csrf_token }}';</script>
+{% endblock %}
+
+{% block additional_css %}
+    <link rel="stylesheet" href="/static/css/delivery_style.css">
+{% endblock %}
+
+{% block content %}
+<style>
+
+
+    .left-section-delivery {
+        background-color: #fff;
+    }
+
+    .right-section-delivery {
+        background-color: aqua;
+    }
+</style>
+<div class="detail-delivery">
+    <div class="detail-delivery-left">
+            <div class="circle-detail-left">
+                1
+            </div>
+
+        
+        <div class="line-detail-left">
+        </div>
+    </div>
+    <div class="detail-delivery-center">
+            <div class="circle-detail-center">
+                2
+            </div>
+
+        <div class="line-detail-center">
+        </div>
+    </div>
+    <div class="detail-delivery-right">
+            <div class="circle-detail-right">
+                3
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="main-container">
+    <div class="left-section-delivery">
+
+    </div>
+    <div class="right-section-delivery">
+
+    </div>
+</div>
+{% endblock content %}

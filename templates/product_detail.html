@@ -16,7 +16,7 @@
 
 {% block content %}
 {% for product in products %}
-<div class="main-container-detail">
+<div class="main-container">
     <div class="left-section-detail">
         {% if product.image_path %}
             <img class="img_product_detail" src="/media/{{ product.image_path }}" alt="{{ product.name }}">
