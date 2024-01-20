@@ -101,7 +101,9 @@
                     </div>
                     {% endfor %}
                     <div class="button-final-buy">
-                        <button class="button-buy" id="add-to-cart-btn">Continuar compra</button>
+                        <a href="{% url 'home' %}">
+                            <button class="button-buy" id="add-to-cart-btn">Continuar compra</button>
+                        </a>
                     </div>
                 </div>
             </div>

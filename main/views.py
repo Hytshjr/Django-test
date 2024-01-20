@@ -9,8 +9,10 @@ from django.contrib import messages
 def user_not_authenticated(user):
     return not user.is_authenticated
 
+
 def index(request):
     return render(request, 'home.html')
+
 
 @user_passes_test(user_not_authenticated, login_url='home')
 def register(request):
@@ -36,6 +38,7 @@ def register(request):
             return redirect('home') # Redirige a la página de inicio
 
     return render(request, 'registration/register.html')
+
 
 @user_passes_test(user_not_authenticated, login_url='home')
 def user_login(request):

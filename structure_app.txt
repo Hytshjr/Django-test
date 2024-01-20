@@ -7,7 +7,7 @@ myproject/
 |   |-- urls.py
 |   |-- wsgi.py
 |-- main/
-|   |-- migrations/
+|   |-- migratixons/
 |   |-- __init__.py
 |   |-- admin.py
 |   |-- apps.py

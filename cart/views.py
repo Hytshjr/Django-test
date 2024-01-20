@@ -60,7 +60,7 @@ def add_to_cart(request, product_id):
         return JsonResponse({
             'message': 'User not authenticated'
             }, status=401)
-    
+
 
 def delete_to_cart(request, product_id):
     if request.user.is_authenticated:
