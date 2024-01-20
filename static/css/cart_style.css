@@ -1,0 +1,181 @@
+.main-container-cart {
+    flex-direction: row;
+    display: flex;
+    width: 1263px;
+}
+
+/* Media query para pantallas pequeñas */
+@media screen and (max-width: 1280px) {
+    .main-container-cart {
+        width: 100%;
+        /* En pantallas más pequeñas, ocupa todo el ancho */
+    }
+}
+
+.right-section-cart {
+    flex: 1;
+}
+
+.left-section-cart,
+.right-section-cart {
+    padding: 37px 10px 37px 19px;
+}
+
+.left-section-cart {
+    width: 65%;
+
+}
+
+.right-section-text,
+.left-section-text {
+    font-size: 30px;
+    font-weight: 100;
+    color: #2f2f2f;
+}
+
+.right-section-detail,
+.left-section-cart-detail {
+    margin-top: 30px;
+    height: 190px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.left-section-cart-detail {
+    display: flex;
+}
+
+.left-section-detail {
+    padding: 15px;
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Geologica', sans-serif;
+}
+
+.price-content-cart,
+.text-content-cart {
+    flex: 1;
+}
+
+.text-content-cart {
+    padding-left: 10px;
+}
+
+.product-name {
+    font-size: 20px;
+}
+
+.brand-name {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 200;
+    font-size: 15px;
+}
+
+.brand-sale {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    font-size: 12px;
+}
+
+.image-content-cart {
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 150px;
+}
+
+.quantity-content-cart {
+    display: flex;
+    padding: 20px 10px 0px 10px;
+}
+
+.plus-count-product,
+.menos-count-product {
+    background-color: #dadada;
+    height: 27px;
+    width: 27px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Centra horizontalmente el contenido */
+}
+
+.menos-count-product {
+    margin-right: 19px;
+}
+
+.plus-count-product {
+    margin-left: 19px;
+}
+
+.max-count-product {
+    margin-left: 0px;
+    text-align: center;
+}
+
+.text-content-cart a {
+    color: #333333;
+
+}
+
+.sales-detail-cart {
+    flex: 1;
+}
+
+.button-buy {
+    background-color: #fa8ab9;
+    border-radius: 45px;
+    height: 45px;
+    width: 90%;
+    font-size: 23px;
+    margin: 8px 0;
+    /* Ajusta según sea necesario */
+    color: #fff;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-buy:hover {
+    background-color: #ed649d;
+    color: #fff;
+}
+
+.sales-total-products {
+    display: flex;
+    padding-bottom: 11px;
+}
+
+
+
+.sales-detail-cart {
+    padding: 36px 0px 17px 0px;
+    align-items: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    box-sizing: border-box;
+}
+
+.sales-total-detail {
+    font-family: 'Geologica', sans-serif;
+    color: #333333;
+    padding: 0px 15px 0px 15px;
+    box-sizing: border-box;
+}
+
+.sales-total-count {
+    flex: 1;
+}
+
+.button-final-buy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centra horizontalmente */
+}

@@ -67,8 +67,9 @@ def delete_to_cart(request, product_id):
         user_id = request.user.id
         user = get_object_or_404(User, id=user_id)
         product = get_object_or_404(Product, id=product_id)
-        cart_item = CartItem.objects.filter(user=user, product=product)
-
+        cart_item = CartItem.objects
+        cart_item = cart_item.filter(user=user, product=product)
+        
         # Filtra y elimina el CartItem específico
         if cart_item.first():
             cart_item.first().delete()

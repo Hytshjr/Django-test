@@ -1,73 +1,12 @@
 {% extends 'index.html' %}
 {% load static %}
 
+{% block additional_css %}
+    <link rel="stylesheet" href="/static/css/auth_style.css">
+{% endblock %}
 
 {% block content %}
-
-<style>
-form {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 400px; /* Puedes ajustar el ancho máximo del formulario aquí */
-    width: 100%; /* Para que el formulario ocupe el 100% del ancho disponible */
-    box-sizing: border-box; /* Para que el padding no incremente el ancho total */
-}
-
-h2 {
-    text-align: center;
-    color: #ff7dbe; /* Rosa pastel */
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-control {
-    width: 100%;
-    max-width: 100%; /* Esto evitará que .form-control sea más grande que su contenedor */
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box; /* Para que el padding no incremente el ancho total */
-}
-
-.btn-primary {
-    background-color: #ff66b2; /* Rosa pastel */
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.btn-primary:hover {
-    background-color: #ff3385; /* Rosa más intenso al pasar el mouse */
-}
-
-.messages {
-    margin-top: 10px;
-    background-color: #fff;
-    padding: 1px;
-}
-.messages span {
-  color: #5c5c5c;
-  text-align: center;
-  display: block;
-  margin-bottom: 8px;
-  padding: 2px;
-  border-radius: 5px;
-  font-size: 15px;
-  font-weight: 600;
-}
-
-</style>
-
-
-
   <h2>Join Us</h2>
-
   <form method="post" action="{% url 'register' %}">
     {% csrf_token %}
     <div class="form-group">
@@ -87,7 +26,6 @@ h2 {
         {% endfor %}
     </div>
     {% endif %}
-
     <button type="submit" class="btn btn-primary">Register</button>
   </form>
 {% endblock %}
