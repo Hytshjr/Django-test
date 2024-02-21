@@ -16,19 +16,19 @@ def cart(request):
     if user_id:
         cart = Product.objects
         products = cart.values(
-            'name', 'price', 'image_path', 
+            'name', 'price', 'image_path',
             'cart_items__quantity', 'id', 'name_detail'
-            ).filter(cart_items__user_id=user_id)
-        
+        ).filter(cart_items__user_id=user_id)
+
         total = 0
-        
+
         for product in products:
             suma = product['price']*product['cart_items__quantity']
             total += suma
 
         total_price = [total]
 
-        context = {'products': products, 'price':total_price}
+        context = {'products': products, 'price': total_price}
 
         return render(request, 'cart.html', context)
     else:
@@ -55,11 +55,11 @@ def add_to_cart(request, product_id):
 
         return JsonResponse({
             'message': 'Product added to cart successfully'
-            })
+        })
     else:
         return JsonResponse({
             'message': 'User not authenticated'
-            }, status=401)
+        }, status=401)
 
 
 def delete_to_cart(request, product_id):
@@ -69,15 +69,15 @@ def delete_to_cart(request, product_id):
         product = get_object_or_404(Product, id=product_id)
         cart_item = CartItem.objects
         cart_item = cart_item.filter(user=user, product=product)
-        
+
         # Filtra y elimina el CartItem específico
         if cart_item.first():
             cart_item.first().delete()
 
         return JsonResponse({
             'message': 'Product deleted to cart successfully'
-            })
+        })
     else:
         return JsonResponse({
             'message': 'User not authenticated'
-            }, status=401)  
+        }, status=401)

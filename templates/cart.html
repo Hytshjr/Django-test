@@ -1,114 +1,116 @@
-{% extends 'index.html' %}
-{% load static %}
-
-{% block additional_js %}
-    <script>const csrfToken = '{{ csrf_token }}';</script>
-    <script src="{% static 'js/cart_script.js' %}"></script>
-{% endblock %}
-
-{% block additional_css %}
-    <link rel="stylesheet" href="/static/css/cart_style.css">
-{% endblock %}
-
-
-{% block content %}
+{% extends 'index.html' %} {% load static %} {% block additional_js %}
+<script>
+  const csrfToken = "{{ csrf_token }}";
+</script>
+<script src="{% static 'js/cart_script.js' %}"></script>
+{% endblock %} {% block additional_css %}
+<link rel="stylesheet" href="/static/css/cart_style.css" />
+{% endblock %} {% block content %}
 <div class="main-container">
-    <div class="left-section-cart">
-        <div class="left-section-text">
-            <span> <strong>Cart</strong> ({{ products|length }} productos)</span>
-        </div>
+  <div class="left-section-cart">
+    <div class="left-section-text">
+      <span> <strong>Cart</strong> ({{ products|length }} productos)</span>
+    </div>
     {% for product in products %}
-        <div class="left-section-cart-detail">
-            <div class="left-section-detail">
-                <div class="image-product-cart">
-                    <a href="{% url 'product_detail' product.name_detail %}">
-                        <section class="image-content-cart" >
-                            {% if product.image_path %}
-                                <img class="img_product" src="/media/{{ product.image_path }}" alt="{{ product.name }}">
-                            {% else %}
-                            <p>No hay imagen disponible</p>
-                            {% endif %}
-                        </section>
-                    </a>
-                </div>
-                <div class="text-content-cart">
-                    <a href="{% url 'product_detail' product.name_detail %}">
-                        <span class="product-name">{{ product.name }}</span><br>
-                        <span class="brand-name">LG</span><br>
-                        <span class="brand-sale">Vendido por Falabella</span>
-                    </a>
-                </div>
-                <div class="price-content-cart">
-                    <div >
-                        <ol >
-                            <li  >
-                                <div class="price_number">
-                                    <span class="price_now">S/ {{ product.price }}
-                                    </span>
-                                    <div class="price_number">
-                                        <span class="descount" style="background-color:#EB0029;color:#ffffff" >-24%
-                                        </span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="price_product">
-                                    <span class="price_mark">S/ {{ product.price }}
-                                    </span>
-                                </div>
-                            </li>
-                        </ol>
-                    </div>
-                </div>
-                <div>
-                    <ol>
-                        <li>
-                            <div class="quantity-content-cart">
-                                <div class="menos-count-product"><button>-</button></div>
-                                <div class="number-count-product" id="quantity" data-cartid="{{ product.id}}">{{ product.cart_items__quantity }}</div>
-                                <div class="plus-count-product"><button>+</button></div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="max-count-product">Máx 10 unidades</div>
-                        </li>
-                    </ol>
-                </div>
-            </div>
+    <div class="left-section-cart-detail">
+      <div class="left-section-detail">
+        <div class="image-product-cart">
+          <a href="{% url 'product_detail' product.name_detail %}">
+            <section class="image-content-cart">
+              {% if product.image_path %}
+              <img
+                class="img_product"
+                src="/media/{{ product.image_path }}"
+                alt="{{ product.name }}"
+              />
+              {% else %}
+              <p>No hay imagen disponible</p>
+              {% endif %}
+            </section>
+          </a>
         </div>
+        <div class="text-content-cart">
+          <a href="{% url 'product_detail' product.name_detail %}">
+            <span class="product-name">{{ product.name }}</span><br />
+            <span class="brand-name">LG</span><br />
+            <span class="brand-sale">Vendido por Falabella</span>
+          </a>
+        </div>
+        <div class="price-content-cart">
+          <div>
+            <ol>
+              <li>
+                <div class="price_number">
+                  <span class="price_now">S/ {{ product.price }} </span>
+                  <div class="price_number">
+                    <span
+                      class="descount"
+                      style="background-color: #eb0029; color: #ffffff"
+                      >-24%
+                    </span>
+                  </div>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="quantity-content-cart">
+          <ol>
+            <li>
+              <div class="quantity-product-cart">
+                <div class="menos-count-product"><button>-</button></div>
+                <div
+                  class="number-count-product"
+                  id="quantity"
+                  data-cartid="{{ product.id}}"
+                >
+                  {{ product.cart_items__quantity }}
+                </div>
+                <div class="plus-count-product"><button>+</button></div>
+              </div>
+            </li>
+            <li>
+              <div class="max-count-product">Máx 10 unidades</div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
     {% endfor %}
+  </div>
 
+  <div class="right-section-cart">
+    <div class="right-section-text">
+      <span> <strong>Resumen de la orden</strong></span>
     </div>
 
-    <div class="right-section-cart">
-        <div class="right-section-text">
-            <span> <strong>Resumen de la orden</strong></span>
-        </div>
-
-        <div class="right-section-detail">
-            <div class="sales-detail-cart">
-                <div class="test">
-                    <div class="sales-total-detail">
-                    {% for total in price %}
-                        <div class="sales-total-products">
-                            <div class="sales-total-count">Productos ({{ products|length }})</div>
-                            <div class="sales-total-price">S/. {{ total }}</div>
-                        </div>
-                        <div class="sales-total-products">
-                            <div class="sales-total-count">Total: </div>
-                            <div class="sales-total-price">S/. {{ total }}</div>
-                        </div>
-                    </div>
-                    {% endfor %}
-                    <a href="{% url 'delivery' %}">
-                        <div class="button-final-buy">
-                            <button class="button-buy" id="add-to-cart-btn">Continuar compra</button>
-                        </div>
-                    </a>
-                </div>
+    <div class="right-section-detail">
+      <div class="sales-detail-cart">
+        <div class="test">
+          <div class="sales-total-detail">
+            {% for total in price %}
+            <div class="sales-total-products">
+              <div class="sales-total-count">
+                Productos ({{ products|length }})
+              </div>
+              <div class="sales-total-price">S/. {{ total }}</div>
             </div>
+            <div class="sales-total-products">
+              <div class="sales-total-count">Total:</div>
+              <div class="sales-total-price">S/. {{ total }}</div>
+            </div>
+          </div>
+          {% endfor %}
+          <a href="{% url 'delivery' %}">
+            <div class="button-final-buy">
+              <button class="button-buy" id="add-to-cart-btn">
+                Continuar compra
+              </button>
+            </div>
+          </a>
         </div>
-
+      </div>
     </div>
+  </div>
 </div>
 {% endblock content %}

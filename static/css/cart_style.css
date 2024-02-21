@@ -43,11 +43,18 @@
 
 .price-content-cart,
 .text-content-cart {
+    display: flex;
     flex: 1;
+    align-items: center;
 }
 
 .text-content-cart {
     padding-left: 10px;
+}
+
+.quantity-content-cart{
+    display: flex;
+    align-items: center;
 }
 
 .product-name {
@@ -67,21 +74,24 @@
 }
 
 .image-content-cart {
+    display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
     width: 150px;
 }
+
 .img_product {
     max-width: 100%;
     /* La imagen no será más ancha que su contenedor */
     height: auto;
     /* Mantiene la proporción original de la imagen */
+    border-radius: 10%;
 }
 
-.quantity-content-cart {
+.quantity-product-cart {
     display: flex;
-    padding: 20px 10px 0px 10px;
+    padding: 0px 10px 13px 10px;
 }
 
 .plus-count-product,
@@ -178,4 +188,8 @@ button {
     color: #fff;
     border: none;
 
+}
+
+.price_number {
+    display: flex;
 }

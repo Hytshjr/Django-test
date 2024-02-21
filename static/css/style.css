@@ -27,14 +27,15 @@ li,
 ol {
     list-style-type: none;
     padding-left: 0;
-  }
+}
 
 .pre-header {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ffffff; /* Agrega un color de fondo para visualizar mejor la sección pre-header */
+    background-color: #ffffff;
+    /* Agrega un color de fondo para visualizar mejor la sección pre-header */
 }
 
 .right-preheader,
@@ -44,19 +45,24 @@ ol {
 }
 
 .right-preheader div {
-    margin-right: 10px; /* Ajusta el margen entre las secciones según tus preferencias */
+    margin-right: 10px;
+    /* Ajusta el margen entre las secciones según tus preferencias */
 }
 
 .right-preheader button {
-    background-color: #111; /* Ajusta el color del botón según tus preferencias */
-    color: #fff; /* Ajusta el color del texto del botón según tus preferencias */
-    padding: 5px 10px; /* Ajusta el espaciado interno del botón según tus preferencias */
+    background-color: #111;
+    /* Ajusta el color del botón según tus preferencias */
+    color: #fff;
+    /* Ajusta el color del texto del botón según tus preferencias */
+    padding: 5px 10px;
+    /* Ajusta el espaciado interno del botón según tus preferencias */
     border: none;
     cursor: pointer;
 }
 
 .right-preheader button:hover {
-    background-color: #333; /* Ajusta el color del botón al pasar el ratón sobre él */
+    background-color: #333;
+    /* Ajusta el color del botón al pasar el ratón sobre él */
 }
 
 .header {
@@ -70,20 +76,24 @@ ol {
 }
 
 .header-center {
-    flex-grow: 1;  /* Hace que este elemento ocupe el espacio restante */
+    flex-grow: 1;
+    /* Hace que este elemento ocupe el espacio restante */
 }
 
 .header-left,
 .header-right,
 .header-center {
     display: flex;
-    align-items:center;  /* Centra verticalmente los elementos */
+    align-items: center;
+    /* Centra verticalmente los elementos */
 
 }
 
 .header-left img {
-    height: 50px;  /* Ajusta según sea necesario */
-    width: auto;  /* Ajusta según sea necesario */
+    height: 50px;
+    /* Ajusta según sea necesario */
+    width: auto;
+    /* Ajusta según sea necesario */
 }
 
 .header-right {
@@ -96,7 +106,8 @@ ol {
 
 .header-link {
     flex-grow: 1;
-    text-align: center;  /* Agrega esta línea */
+    text-align: center;
+    /* Agrega esta línea */
 }
 
 nav a {
@@ -105,14 +116,16 @@ nav a {
     text-decoration: none;
     padding: 1em;
     margin: 0 1em;
-    display: inline-block;  /* Añade esto para que los enlaces se muestren en una línea */
+    display: inline-block;
+    /* Añade esto para que los enlaces se muestren en una línea */
 }
 
 .header-right svg {
-    fill: #ff66b2; /* o el color que desees */
+    fill: #ff66b2;
+    /* o el color que desees */
     height: 38px;
     width: 38px;
-  }
+}
 
 
 
@@ -123,14 +136,19 @@ section {
 }
 
 .banner_home {
-    text-align: center; /* Alinea horizontalmente el contenido dentro del contenedor */
-    display: flex; /* Utiliza un contenedor de tipo flex para controlar la alineación vertical */
-    align-items: center; /* Alinea verticalmente el contenido en el centro */
+    text-align: center;
+    /* Alinea horizontalmente el contenido dentro del contenedor */
+    display: flex;
+    /* Utiliza un contenedor de tipo flex para controlar la alineación vertical */
+    align-items: center;
+    /* Alinea verticalmente el contenido en el centro */
 }
 
 .banner_home img {
-    max-width: 100%; /* Asegura que la imagen no sea más ancha que el contenedor */
-    height: auto; /* Mantiene la proporción original de la imagen */
+    max-width: 100%;
+    /* Asegura que la imagen no sea más ancha que el contenedor */
+    height: auto;
+    /* Mantiene la proporción original de la imagen */
 }
 
 
@@ -143,24 +161,31 @@ section {
     flex: 1;
     background-color: #ffffff;
     margin-top: 12px;
-    max-width: 25%; /* Puedes ajustar este valor según tu preferencia */
+    max-width: 25%;
+    /* Puedes ajustar este valor según tu preferencia */
 
 
 }
 
 .main-container {
     display: flex;
-    flex-direction: row; /* Cambiado a fila para que las secciones estén una al lado de la otra */
+    flex-direction: row;
+    /* Cambiado a fila para que las secciones estén una al lado de la otra */
     width: 1263px;
 }
 
 /* Media query para pantallas pequeñas */
 @media screen and (max-width: 1280px) {
     .main-container {
-        width: 100%; /* En pantallas más pequeñas, ocupa todo el ancho */
+        width: 100%;
+        /* En pantallas más pequeñas, ocupa todo el ancho */
     }
 }
 
-
-
-
+/* Rojo descuento */
+.descount {
+    padding: 0px 6px;
+    border-radius: 3px;
+    margin-left: 5px !important;
+    line-height: 1.2rem !important;
+}
